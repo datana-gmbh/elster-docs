@@ -1,0 +1,2277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema automatisch generiert von ElsterRules 47.0.0 -->
+<!-- Schema entsprechend eXML-Spezifikation Version 2.0 -->
+<!-- ForschungZulAntrag - 6 - 3.0 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://finkonsens.de/elster/elsternachricht/forschungzulantrag/v6" targetNamespace="http://finkonsens.de/elster/elsternachricht/forschungzulantrag/v6" xmlns:exml="http://finkonsens.de/elster/elsternachricht/forschungzulantrag/v6">
+    <!-- XML-Typdefinitionen fuer eXML -->
+    <!-- Definition der datenartspezifischen eXML-Struktur -->
+    <xs:simpleType name="DezimalzahlNichtNegOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="[1-9][0-9]*(\.[0-9]+)?">
+                <xs:annotation>
+                    <xs:documentation>Positive Zahlen ab 1</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+            <xs:pattern value="0\.[0-9]*[1-9][0-9]*">
+                <xs:annotation>
+                    <xs:documentation>Zahlen aus dem offenen Intervall (0, 1)</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+            <xs:pattern value="0(\.0+)?">
+                <xs:annotation>
+                    <xs:documentation>Nullwerte</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DezimalzahlPosOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="[1-9][0-9]*(\.[0-9]+)?">
+                <xs:annotation>
+                    <xs:documentation>Positive Zahlen ab 1</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+            <xs:pattern value="0\.[0-9]*[1-9][0-9]*">
+                <xs:annotation>
+                    <xs:documentation>Zahlen aus dem offenen Intervall (0, 1)</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlNichtNegOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:pattern value="[1-9].*|0">
+                <xs:annotation>
+                    <xs:documentation>Kein Vorzeichen, Einträge der Form '0' oder erste Ziffer ungleich '0'</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="-?[1-9].*|0">
+                <xs:annotation>
+                    <xs:documentation>Vorzeichen '+' und Einträge der Form '-0' nicht zugelassen, erste Ziffer ungleich '0'</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlPosOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="[1-9].*">
+                <xs:annotation>
+                    <xs:documentation>Kein Vorzeichen, erste Ziffer ungleich '0'</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StringBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[&#x20;-&#x7e;&#xa1;-&#xa3;&#xa5;-&#xa5;&#xa7;-&#xa7;&#xaa;-&#xac;&#xae;-&#xb3;&#xb5;-&#xb5;&#xb9;-&#xbb;&#xbf;-&#xff;&#x152;-&#x153;&#x160;-&#x161;&#x178;-&#x178;&#x17d;-&#x17e;&#x20ac;-&#x20ac;]+">
+                <xs:annotation>
+                    <xs:documentation>Zeichensatz Standard_E_V2, Zeilenumbrüche und Leerangaben unterbinden</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DatumBereichTTpMMpJJJJbTTpMMpJJJJBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])\.(10|11|12|01|02|03|04|05|06|07|08|09)\.([0-9][0-9][0-9][1-9]|[0-9][0-9][1-9][0-9]|[0-9][1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])-(0[1-9]|[1-2][0-9]|3[0-1])\.(10|11|12|01|02|03|04|05|06|07|08|09)\.([0-9][0-9][0-9][1-9]|[0-9][0-9][1-9][0-9]|[0-9][1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DatumTTpMMpJJJJBekanntBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])\.(10|11|12|01|02|03|04|05|06|07|08|09)\.([0-9][0-9][0-9][1-9]|[0-9][0-9][1-9][0-9]|[0-9][1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])">
+                <xs:annotation>
+                    <xs:documentation>Art der Teilbekanntheit: BEKANNT</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DezimalzahlNichtNegOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType">
+        <xs:restriction base="DezimalzahlNichtNegOhneFuehrNullBaseSType">
+            <xs:pattern value="\d{1,12}(\.\d{2,2})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DezimalzahlNichtNegOhneFuehrNull_MinW0p00_MaxW100p00_MaxVKm1_MinNK2_MaxNK2_SType">
+        <xs:restriction base="DezimalzahlNichtNegOhneFuehrNullBaseSType">
+            <xs:minInclusive value="0.00"/>
+            <xs:maxInclusive value="100.00"/>
+            <xs:pattern value="\d{1,15}(\.\d{2,2})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DezimalzahlPosOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType">
+        <xs:restriction base="DezimalzahlPosOhneFuehrNullBaseSType">
+            <xs:pattern value="\d{1,12}(\.\d{2,2})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ForschungZulAntrag_AllgAngaben_Organschaft_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0">
+                <xs:annotation>
+                    <xs:documentation>keine Organschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>Organträger</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>Organgesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>Organträger und Organgesellschaft in Personalunion</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ForschungZulAntrag_AllgAngaben_PersGAngaben_AngBet_ArtBeteiligter_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>Natürliche Person</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>Kapitalgesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>Mitunternehmerschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:documentation>Sonstige</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ForschungZulAntrag_AllgAngaben_WirtZweig_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>01 - Landwirtschaft, Jagd und damit verbundene Tätigkeiten</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>02 - Forstwirtschaft und Holzeinschlag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>03 - Fischerei und Aquakultur</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:documentation>05 - Kohlenbergbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="6">
+                <xs:annotation>
+                    <xs:documentation>06 - Gewinnung von Erdöl und Erdgas</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="7">
+                <xs:annotation>
+                    <xs:documentation>07 - Erzbergbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="8">
+                <xs:annotation>
+                    <xs:documentation>08 - Gewinnung von Steinen und Erden, sonstiger Bergbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="9">
+                <xs:annotation>
+                    <xs:documentation>09 - Erbringung von Dienstleistungen für den Bergbau und für die Gewinnung von Steinen und Erden</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+                <xs:annotation>
+                    <xs:documentation>10 - Herstellung von Nahrungs- und Futtermitteln</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+                <xs:annotation>
+                    <xs:documentation>11 - Getränkeherstellung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+                <xs:annotation>
+                    <xs:documentation>12 - Tabakverarbeitung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="13">
+                <xs:annotation>
+                    <xs:documentation>13 - Herstellung von Textilien</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+                <xs:annotation>
+                    <xs:documentation>14 - Herstellung von Bekleidung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+                <xs:annotation>
+                    <xs:documentation>15 - Herstellung von Leder, Lederwaren und Schuhen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+                <xs:annotation>
+                    <xs:documentation>16 - Herstellung von Holz-, Flecht-, Korb- und Korkwaren (ohne Möbel)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+                <xs:annotation>
+                    <xs:documentation>17 - Herstellung von Papier, Pappe und Waren daraus</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="18">
+                <xs:annotation>
+                    <xs:documentation>18 - Herstellung Druckerzeugnissen; Vervielfältigung von bespielten Ton-, Bild- und Datenträgern</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="19">
+                <xs:annotation>
+                    <xs:documentation>19 - Kokerei und Mineralölverarbeitung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+                <xs:annotation>
+                    <xs:documentation>20 - Herstellung von chemischen Erzeugnissen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="21">
+                <xs:annotation>
+                    <xs:documentation>21 - Herstellung von pharmazeutischen Erzeugnissen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22">
+                <xs:annotation>
+                    <xs:documentation>22 - Herstellung von Gummi- und Kunststoffwaren</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="23">
+                <xs:annotation>
+                    <xs:documentation>23 - Herstellung von Glas und Glaswaren, Keramik, Verarbeitung von Steinen und Erden</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="24">
+                <xs:annotation>
+                    <xs:documentation>24 - Metallerzeugung und - bearbeitung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="25">
+                <xs:annotation>
+                    <xs:documentation>25 - Herstellung von Metallerzeugnissen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="26">
+                <xs:annotation>
+                    <xs:documentation>26 - Herstellung von Datenverarbeitungsgeräten, elektronischen und optischen Erzeugnissen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="27">
+                <xs:annotation>
+                    <xs:documentation>27 - Herstellung von elektrischen Ausrüstungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="28">
+                <xs:annotation>
+                    <xs:documentation>28 - Maschinenbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="29">
+                <xs:annotation>
+                    <xs:documentation>29 - Herstellung von Kraftwagen und Kraftwagenanteilen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+                <xs:annotation>
+                    <xs:documentation>30 - Sonstiger Fahrzeugbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="31">
+                <xs:annotation>
+                    <xs:documentation>31 - Herstellung von Möbeln</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="32">
+                <xs:annotation>
+                    <xs:documentation>32 - Herstellung von sonstigen Waren</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="33">
+                <xs:annotation>
+                    <xs:documentation>33 - Reparatur und Installation von Maschinen und Ausrüstungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="35">
+                <xs:annotation>
+                    <xs:documentation>35 - Energieversorgung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="36">
+                <xs:annotation>
+                    <xs:documentation>36 - Wasserversorgung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="37">
+                <xs:annotation>
+                    <xs:documentation>37 - Abwasserentsorgung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="38">
+                <xs:annotation>
+                    <xs:documentation>38 - Sammlung, Behandlung und Beseitigung von Abfällen; Rückgewinnung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="39">
+                <xs:annotation>
+                    <xs:documentation>39 - Beseitigung von Umweltverschmutzungen und sonstige Entsorgung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="41">
+                <xs:annotation>
+                    <xs:documentation>41 - Hochbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="42">
+                <xs:annotation>
+                    <xs:documentation>42 - Tiefbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="43">
+                <xs:annotation>
+                    <xs:documentation>43 - Vorbereitende Baustellenarbeiten, Bauinstallation und sonstiges Ausbaugewerbe</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="45">
+                <xs:annotation>
+                    <xs:documentation>45 - Handel mit Kraftfahrzeugen; Instandhaltung und Reparatur von Kraftfahrzeugen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="46">
+                <xs:annotation>
+                    <xs:documentation>46 - Großhandel (ohne Handel mit Kraftfahrzeugen)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="47">
+                <xs:annotation>
+                    <xs:documentation>47 - Einzelhandel (ohne Handel mit Kraftfahrzeugen)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="49">
+                <xs:annotation>
+                    <xs:documentation>49 - Landverkehr und Transport von Rohrfernleitungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="50">
+                <xs:annotation>
+                    <xs:documentation>50 - Schifffahrt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="51">
+                <xs:annotation>
+                    <xs:documentation>51 - Luftfahrt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="52">
+                <xs:annotation>
+                    <xs:documentation>52 - Lagerei sowie Erbringung von sonstigen Dienstleistungen für den Verkehr</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="53">
+                <xs:annotation>
+                    <xs:documentation>53 - Post-, Kurier- und Expressdienste</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="55">
+                <xs:annotation>
+                    <xs:documentation>55 - Beherbergung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="56">
+                <xs:annotation>
+                    <xs:documentation>56 - Gastronomie</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="58">
+                <xs:annotation>
+                    <xs:documentation>58 - Verlagswesen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="59">
+                <xs:annotation>
+                    <xs:documentation>59 - Herstellung, Verleih und Vertrieb von Filmen und Fernsehprogrammen; Kinos; Tonstudios und Verlegen von Musik</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="60">
+                <xs:annotation>
+                    <xs:documentation>60 - Rundfunkveranstalter</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="61">
+                <xs:annotation>
+                    <xs:documentation>61 - Telekommunikation</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="62">
+                <xs:annotation>
+                    <xs:documentation>62 - Erbringung von Dienstleistungen der Informationstechnologie</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="63">
+                <xs:annotation>
+                    <xs:documentation>63 - Informationsdienstleistungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="64">
+                <xs:annotation>
+                    <xs:documentation>64 - Erbringung von Finanzdienstleistungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="65">
+                <xs:annotation>
+                    <xs:documentation>65 - Versicherungen, Rückversicherungen und Pensionskassen (ohne Sozialversicherung)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="66">
+                <xs:annotation>
+                    <xs:documentation>66 - Mit Finanz- und Versicherungsdienstleistungen verbundene Tätigkeiten</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="68">
+                <xs:annotation>
+                    <xs:documentation>68 - Grundstücks- und Wohnungswesen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="69">
+                <xs:annotation>
+                    <xs:documentation>69 - Rechts- und Steuerberatung, Wirtschaftsprüfung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="70">
+                <xs:annotation>
+                    <xs:documentation>70 - Verwaltung und Führung von Unternehmen und Betrieben; Unternehmensberatung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="71">
+                <xs:annotation>
+                    <xs:documentation>71 - Architektur- und Ingenieurbüros; technische, physikalische und chemische Untersuchung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="72">
+                <xs:annotation>
+                    <xs:documentation>72 - Forschung und Entwicklung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="73">
+                <xs:annotation>
+                    <xs:documentation>73 - Werbung und Marktforschung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="74">
+                <xs:annotation>
+                    <xs:documentation>74 - Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="75">
+                <xs:annotation>
+                    <xs:documentation>75 - Veterinärwesen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="77">
+                <xs:annotation>
+                    <xs:documentation>77 - Vermietung von beweglichen Sachen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="78">
+                <xs:annotation>
+                    <xs:documentation>78 - Vermittlung und Überlassung von Arbeitskräften</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="79">
+                <xs:annotation>
+                    <xs:documentation>79 - Reisebüros, Reiseveranstalter und Erbringung sonstiger Reservierungsdienstleistungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="80">
+                <xs:annotation>
+                    <xs:documentation>80 - Wach- und Sicherheitsdienste sowie Detekteien</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="81">
+                <xs:annotation>
+                    <xs:documentation>81 - Gebäudebetreuung; Garten- und Landschaftsbau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="82">
+                <xs:annotation>
+                    <xs:documentation>82 - Erbringung von wirtschaftlichen Dienstleistungen für Unternehmen und Privatpersonen a. n. g.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="84">
+                <xs:annotation>
+                    <xs:documentation>84 - Öffentliche Verwaltung, Verteidigung; Sozialversicherung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="85">
+                <xs:annotation>
+                    <xs:documentation>85 - Erziehung und Unterricht</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="86">
+                <xs:annotation>
+                    <xs:documentation>86 - Gesundheitswesen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="87">
+                <xs:annotation>
+                    <xs:documentation>87 - Heime (ohne Erholungs- und Ferienheime)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="88">
+                <xs:annotation>
+                    <xs:documentation>88 - Sozialwesen (ohne Heime)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="90">
+                <xs:annotation>
+                    <xs:documentation>90 - Kreative, künstlerische und unterhaltende Tätigkeiten</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="91">
+                <xs:annotation>
+                    <xs:documentation>91 - Bibliotheken, Archive, Museen, botanische und zoologische Gärten</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="92">
+                <xs:annotation>
+                    <xs:documentation>92 - Spiel-, Wett- und Lotteriewesen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="93">
+                <xs:annotation>
+                    <xs:documentation>93 - Erbringung von Dienstleistungen des Sports, der Unterhaltung und der Erholung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="94">
+                <xs:annotation>
+                    <xs:documentation>94 - Interessenvertretungen sowie kirchliche und sonstige religiöse Vereinigungen (ohne Sozialwesen und Sport)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="95">
+                <xs:annotation>
+                    <xs:documentation>95 - Reparatur und Datenverarbeitungsgeräten und Gebrauchsgütern</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="96">
+                <xs:annotation>
+                    <xs:documentation>96 - Erbringung von sonstigen überwiegend persönlichen Dienstleistungen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="97">
+                <xs:annotation>
+                    <xs:documentation>97 - Private Haushalte und Hauspersonal</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="98">
+                <xs:annotation>
+                    <xs:documentation>98 - Herstellung von Waren und Erbringung von Dienstleistungen durch private Haushalte für den Eigenbedarf ohne ausgeprägten Schwerpunkt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="99">
+                <xs:annotation>
+                    <xs:documentation>99 - Exterritoriale Organisation und Körperschaften</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ForschungZulAntrag_AngabenFuE_Antrag_Art_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>eigenbetriebliche Forschung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>eigenbetriebliche Forschung und Auftragsforschung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>Auftragsforschung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_RECHTSFORM_FORSCHUNGSZULAGE_2_BaseSType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="310">
+                <xs:annotation>
+                    <xs:documentation>Aktiengesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="320">
+                <xs:annotation>
+                    <xs:documentation>Kommanditgesellschaft auf Aktien</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="350">
+                <xs:annotation>
+                    <xs:documentation>Gesellschaft mit beschränkter Haftung</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="360">
+                <xs:annotation>
+                    <xs:documentation>Europäische Gesellschaft (SE)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="370">
+                <xs:annotation>
+                    <xs:documentation>Unternehmergesellschaft (haftungsbeschränkt)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="450">
+                <xs:annotation>
+                    <xs:documentation>Europäische Genossenschaft (SCE)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="490">
+                <xs:annotation>
+                    <xs:documentation>sonstige Genossenschaft im Sinne des Genossenschaftsgesetzes</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="510">
+                <xs:annotation>
+                    <xs:documentation>Versicherungsverein auf Gegenseitigkeit</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="590">
+                <xs:annotation>
+                    <xs:documentation>sonstige juristische Person des privaten Rechts</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="621">
+                <xs:annotation>
+                    <xs:documentation>Nichtrechtsfähiger Verein</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="810">
+                <xs:annotation>
+                    <xs:documentation>Gebietskörperschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="820">
+                <xs:annotation>
+                    <xs:documentation>Öffentlich-rechtliche Religionsgesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="834">
+                <xs:annotation>
+                    <xs:documentation>Sonstige juristische Person des öffentlichen Rechts (zum Beispiel Zweckverband)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="910">
+                <xs:annotation>
+                    <xs:documentation>Ausländische Rechtsform, die mit Körperschaften nach § 1 Absatz 1 Nummer 1 KStG vergleichbar ist</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="200">
+                <xs:annotation>
+                    <xs:documentation>Atypisch stille Gesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="210">
+                <xs:annotation>
+                    <xs:documentation>Offene Handelsgesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="220">
+                <xs:annotation>
+                    <xs:documentation>Kommanditgesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="230">
+                <xs:annotation>
+                    <xs:documentation>GmbH und Co. KG</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="240">
+                <xs:annotation>
+                    <xs:documentation>GmbH und Co. OHG</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="250">
+                <xs:annotation>
+                    <xs:documentation>Aktiengesellschaft und Co. KG</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="260">
+                <xs:annotation>
+                    <xs:documentation>Aktiengesellschaft und Co. OHG</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="270">
+                <xs:annotation>
+                    <xs:documentation>Gesellschaft des bürgerlichen Rechts</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="280">
+                <xs:annotation>
+                    <xs:documentation>Europäische wirtschaftliche Interessenvereinigung (EWIV)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="290">
+                <xs:annotation>
+                    <xs:documentation>sonstige Personengesellschaften</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="920">
+                <xs:annotation>
+                    <xs:documentation>ausländische Rechtsform, die einer Personengesellschaft entspricht</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="110">
+                <xs:annotation>
+                    <xs:documentation>Hausgewerbetreibende oder gleichgestellte Person</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="120">
+                <xs:annotation>
+                    <xs:documentation>Sonstige Einzelgewerbetreibende (außer Hausgewerbe und gleichgestellte Personen)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="130">
+                <xs:annotation>
+                    <xs:documentation>Land- oder Forstwirt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="140">
+                <xs:annotation>
+                    <xs:documentation>Angehörige(r) der freien Berufe</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="150">
+                <xs:annotation>
+                    <xs:documentation>Sonstige selbstständig tätige Personen</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="160">
+                <xs:annotation>
+                    <xs:documentation>Person mit Beteiligungen an gewerblichen Personengesellschaften</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="190">
+                <xs:annotation>
+                    <xs:documentation>Sonstige natürliche Person</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType">
+        <xs:restriction base="GanzzahlNichtNegOhneFuehrNullBaseSType">
+            <xs:totalDigits value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlOhneFuehrNull_MaxVK12_SType">
+        <xs:restriction base="GanzzahlOhneFuehrNullBaseSType">
+            <xs:totalDigits value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlPosOhneFuehrNull_MaxVK12_SType">
+        <xs:restriction base="GanzzahlPosOhneFuehrNullBaseSType">
+            <xs:totalDigits value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlPosOhneFuehrNull_Muster1432008049_SType">
+        <xs:restriction base="GanzzahlPosOhneFuehrNullBaseSType">
+            <xs:pattern value=".{0,5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IDNrBaseSType">
+        <xs:annotation>
+            <xs:documentation>IDNr</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{11}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Ja1BaseSType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="JaNein12BaseSType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>Ja</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>Nein</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NAEnum_LAND_OF_WORLD_2020_1_BaseSType">
+        <xs:restriction base="StringBaseSType">
+            <xs:annotation>
+                <xs:documentation>Afghanistan,Ägypten,Albanien,Algerien,Andorra,Angola,Antigua und Barbuda,Äquatorialguinea,Argentinien,Armenien,Aserbaidschan,Äthiopien,Australien,Bahamas,Bahrain,Bangladesch,Barbados,Belgien,Belize,Benin,Bhutan,Bolivien,Bosnien und Herzegowina,Botsuana,Brasilien,Brunei Darussalam,Bulgarien,Burkina Faso,Burundi,Chile,China,Cookinseln,Costa Rica,Cote d&apos;Ivoire,Dänemark,Deutschland,Dominica,Dominikanische Republik,Dschibuti,Ecuador,El Salvador,Eritrea,Estland,Eswatini,Fidschi,Finnland,Frankreich,Gabun,Gambia,Georgien,Ghana,Grenada,Griechenland,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Indien,Indonesien,Irak,Iran,Irland,Island,Israel,Italien,Jamaika,Japan,Jemen,Jordanien,Kambodscha,Kamerun,Kanada,Kap Verde,Kasachstan,Katar,Kenia,Kirgisistan,Kiribati,Kolumbien,Komoren,Kongo,Kongo, Demokratische Republik,Korea, Demokratische Volksrepublik,Korea, Republik,Kosovo,Kroatien,Kuba,Kuwait,Laos,Lesotho,Lettland,Libanon,Liberia,Libyen,Liechtenstein,Litauen,Luxemburg,Madagaskar,Malawi,Malaysia,Malediven,Mali,Malta,Marokko,Marshallinseln,Mauretanien,Mauritius,Mexiko,Föderierte Staaten von Mikronesien,Moldau,Monaco,Mongolei,Montenegro,Mosambik,Myanmar,Namibia,Nauru,Nepal,Neuseeland,Nicaragua,Niederlande,Niger,Nigeria,Niue,Nordmazedonien,Norwegen,Oman,Österreich,Pakistan,Palau,Panama,Papua-Neuguinea,Paraguay,Peru,Philippinen,Polen,Portugal,Ruanda,Rumänien,Russische Föderation,Salomonen,Sambia,Samoa,San Marino,Sao Tome und Principe,Saudi-Arabien,Schweden,Schweiz,Senegal,Serbien,Seychellen,Sierra Leone,Simbabwe,Singapur,Slowakei,Slowenien,Somalia,Spanien,Sri Lanka,St. Kitts und Nevis,St. Lucia,St. Vincent und die Grenadinen,Südafrika,Sudan,Südsudan,Surinam,Syrien,Tadschikistan,Tansania,Thailand,Timor-Leste,Togo,Tonga,Trinidad und Tobago,Tschad,Tschechische Republik,Tunesien,Türkei,Turkmenistan,Tuvalu,Uganda,Ukraine,Ungarn,Uruguay,USA,Usbekistan,Vanuatu,Vatikanstadt,Venezuela,Vereinigte Arabische Emirate,Vereinigtes Königreich,Vietnam,Weißrussland,Zentralafrikanische Republik,Zypern</xs:documentation>
+            </xs:annotation>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType">
+        <xs:restriction base="StringBaseSType">
+            <xs:annotation>
+                <xs:documentation>Afghanistan,Ägypten,Albanien,Algerien,Andorra,Angola,Antigua und Barbuda,Äquatorialguinea,Argentinien,Armenien,Aserbaidschan,Äthiopien,Australien,Bahamas,Bahrain,Bangladesch,Barbados,Belgien,Belize,Benin,Bhutan,Bolivien,Bosnien und Herzegowina,Botsuana,Brasilien,Brunei Darussalam,Bulgarien,Burkina Faso,Burundi,Chile,China,Cookinseln,Costa Rica,Cote d&apos;Ivoire,Dänemark,Dominica,Dominikanische Republik,Dschibuti,Ecuador,El Salvador,Eritrea,Estland,Eswatini,Fidschi,Finnland,Frankreich,Gabun,Gambia,Georgien,Ghana,Grenada,Griechenland,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Indien,Indonesien,Irak,Iran,Irland,Island,Israel,Italien,Jamaika,Japan,Jemen,Jordanien,Kambodscha,Kamerun,Kanada,Kap Verde,Kasachstan,Katar,Kenia,Kirgisistan,Kiribati,Kolumbien,Komoren,Kongo,Kongo, Demokratische Republik,Korea, Demokratische Volksrepublik,Korea, Republik,Kosovo,Kroatien,Kuba,Kuwait,Laos,Lesotho,Lettland,Libanon,Liberia,Libyen,Liechtenstein,Litauen,Luxemburg,Madagaskar,Malawi,Malaysia,Malediven,Mali,Malta,Marokko,Marshallinseln,Mauretanien,Mauritius,Mexiko,Föderierte Staaten von Mikronesien,Moldau,Monaco,Mongolei,Montenegro,Mosambik,Myanmar,Namibia,Nauru,Nepal,Neuseeland,Nicaragua,Niederlande,Niger,Nigeria,Niue,Nordmazedonien,Norwegen,Oman,Österreich,Pakistan,Palau,Panama,Papua-Neuguinea,Paraguay,Peru,Philippinen,Polen,Portugal,Ruanda,Rumänien,Russische Föderation,Salomonen,Sambia,Samoa,San Marino,Sao Tome und Principe,Saudi-Arabien,Schweden,Schweiz,Senegal,Serbien,Seychellen,Sierra Leone,Simbabwe,Singapur,Slowakei,Slowenien,Somalia,Spanien,Sri Lanka,St. Kitts und Nevis,St. Lucia,St. Vincent und die Grenadinen,Südafrika,Sudan,Südsudan,Surinam,Syrien,Tadschikistan,Tansania,Thailand,Timor-Leste,Togo,Tonga,Trinidad und Tobago,Tschad,Tschechische Republik,Tunesien,Türkei,Turkmenistan,Tuvalu,Uganda,Ukraine,Ungarn,Uruguay,USA,Usbekistan,Vanuatu,Vatikanstadt,Venezuela,Vereinigte Arabische Emirate,Vereinigtes Königreich,Vietnam,Weißrussland,Zentralafrikanische Republik,Zypern</xs:documentation>
+            </xs:annotation>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SteuernummerBaseSType">
+        <xs:annotation>
+            <xs:documentation>Steuernummer</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{4})0[0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL1000_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL12_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL20_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL46_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="46"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL50_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL51_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="51"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL55_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="55"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL60_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="60"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL72_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="72"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL5_MaxL5_Muster2084297628_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="5"/>
+            <xs:pattern value="([0]{1}[1-9]{1}[0-9]{3})|([1-9]{1}[0-9]{4})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="UStIdNrBaseSType">
+        <xs:annotation>
+            <xs:documentation>UStIdNr</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[a-zA-Z0-9\+\*]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="ForschungZulAntrag" type="ForschungZulAntrag_CType"/>
+    <xs:complexType name="ForschungZulAntrag_CType">
+        <xs:sequence>
+            <xs:element name="ForschungZulAntrag" type="ForschungZulAntrag_m262457374_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="version" fixed="6" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="ForschungZulAntrag_m262457374_CType">
+        <xs:sequence>
+            <xs:element name="Wirtschaftsjahr" type="DatumBereichTTpMMpJJJJbTTpMMpJJJJBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Für das Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StNr" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AllgAngaben" type="AllgAngaben_191298593_CType" minOccurs="0" maxOccurs="99"/>
+            <xs:element name="AngabenFuE" type="AngabenFuE_191298593_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="DeMinimis" type="DeMinimis_191298593_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="WeitereVoraussetzung" type="WeitereVoraussetzung_191298593_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Berechnung" type="Berechnung_191298593_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Erkl" type="Erkl_191298593_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AllgAngaben_191298593_CType">
+        <xs:sequence>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name/Bezeichnung des Unternehmens</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GesFestStNr" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Soweit erforderlich: Steuernummer bei gesonderter Feststellung der Einkünfte</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SitzGem" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Sitz (Gemeinde)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Rechtsform" type="Enum_RECHTSFORM_FORSCHUNGSZULAGE_2_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Rechtsform</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="WirtZweig" type="Enum_ForschungZulAntrag_AllgAngaben_WirtZweig_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Wirtschaftszweig</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Organschaft" type="Enum_ForschungZulAntrag_AllgAngaben_Organschaft_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Organschaft</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Anschrift" type="Anschrift_797158589_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Vertreter" type="Vertreter_797158589_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AngabenStBefreiung" type="AngabenStBefreiung_797158589_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AngabenVerbundUntern" type="AngabenVerbundUntern_797158589_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AngabenLohnaufw" type="AngabenLohnaufw_797158589_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AngabenLohnaufwFuEVor" type="AngabenLohnaufwFuEVor_797158589_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PersGAngaben" type="PersGAngaben_797158589_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Anschrift_797158589_CType">
+        <xs:sequence>
+            <xs:element name="AdrInl" type="AdrInl_m1402640017_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AdrAusl" type="AdrAusl_m1402640017_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AdrInl_m1402640017_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdressErg" type="String_MinL1_MaxL46_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Adressergänzung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AdrAusl_m1402640017_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL1_MaxL12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Staat" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Staat</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Vertreter_797158589_CType">
+        <xs:sequence>
+            <xs:element name="Anrede" type="String_MinL1_MaxL50_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anrede</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdrInl" type="AdrInl_1744874594_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AdrAusl" type="AdrAusl_1744874594_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AdrInl_1744874594_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdressErg" type="String_MinL1_MaxL46_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Adressergänzung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AdrAusl_1744874594_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL1_MaxL12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Staat" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Staat</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenStBefreiung_797158589_CType">
+        <xs:sequence>
+            <xs:element name="StBefreit" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Das Unternehmen ist nach § 5 des KStG von der Besteuerung befreit.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VorhabenDurchgefuehrt" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die nachfolgend erklärten Forschungs- und Entwicklungsvorhaben wurden im Rahmen eines wirtschaftlichen Geschäftsbetriebs oder eines nicht steuerbefreiten Betriebs gewerblicher Art von juristischen Personen des öffentlichen Rechts durchgeführt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenVerbundUntern_797158589_CType">
+        <xs:sequence>
+            <xs:element name="VerbundUntern" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Es handelt sich um ein verbundenes Unternehmen im Sinne von § 3 Absatz 6 FZulG. Maßgeblich sind die Verhältnisse am Ende des Wirtschaftsjahres.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FZulBeantragt" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hat ein mit Ihnen verbundenes Unternehmen für Wirtschaftsjahre, die im gleichen Kalenderjahr enden in dem Ihr Wirtschaftsjahr endet, Forschungszulage beantragt beziehungsweise wird ein mit Ihnen verbundenes Unternehmen Forschungszulage beantragen?</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BMGVerbundUntern" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Wird die maximal förderfähige Bemessungsgrundlage für verbundene Unternehmen in Höhe von 4 Millionen € überstiegen?</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MaxFoerdBmg" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Maximal förderfähige Bemessungsgrundlage, die für diesen Antrag auf Forschungszulage berücksichtigt werden soll.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VerbundUnternDaten" type="VerbundUnternDaten_746826481_CType" minOccurs="0" maxOccurs="99999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VerbundUnternDaten_746826481_CType">
+        <xs:sequence>
+            <xs:element name="StNrVerbundUntern" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer des verbundenen Unternehmens</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NameVerbundUntern" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name des verbundenen Unternehmens</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilMaxFoerdBmg" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteil an der maximal förderfähigen Bemessungsgrundlage, der auf das verbundene Unternehmen entfällt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FZulBescheid" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Soweit vorhanden: Datum des Bescheides über die Festsetzung der Forschungszulage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DatumAntragFZul" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Soweit vorhanden: Datum des Antrags auf Forschungszulage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenLohnaufw_797158589_CType">
+        <xs:sequence>
+            <xs:element name="ANAnzMitLStAbzug" type="DezimalzahlNichtNegOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anzahl der im Unternehmen beschäftigten Arbeitnehmer, für die ein Lohnsteuerabzug vorgenommen wird, insgesamt im Wirtschaftsjahr (nach Vollzeitäquivalenten)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ANAnzOhneLStAbzug" type="DezimalzahlNichtNegOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anzahl der im Unternehmen beschäftigten Arbeitnehmer, für die aufgrund einer DBA-Regelung kein Lohnsteuerabzug vorgenommen wird, insgesamt im Wirtschaftsjahr (nach Vollzeitäquivalenten)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BALMitLStAbzug" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bruttoarbeitslöhne, die der Arbeitgeber den Arbeitnehmern unmittelbar gewährt und von dem der Lohnsteuerabzug gemäß § 38 Absatz 1 EStG vorgenommen wurde, insgesamt im Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BALOhneLStAbzug" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bruttoarbeitslöhne, die der Arbeitgeber den Arbeitnehmern unmittelbar gewährt und für die der Lohnsteuerabzug gemäß § 38 Absatz 1 EStG aufgrund einer DBA-Regelung nicht vorgenommen wird, insgesamt im Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ANZukunft" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ausgaben für die Zukunftssicherung der Arbeitnehmer nach § 3 Nummer 62 EStG insgesamt im Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenLohnaufwFuEVor_797158589_CType">
+        <xs:sequence>
+            <xs:element name="ANAnzMitLStAbzugFuEVor" type="DezimalzahlNichtNegOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anzahl der im Unternehmen mit Forschungs- und Entwicklungsvorhaben beschäftigten Arbeitnehmer, für die ein Lohnsteuerabzug vorgenommen wird, insgesamt im Wirtschaftsjahr (nach Vollzeitäquivalenten)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ANAnzOhneLStAbzugFuEVor" type="DezimalzahlNichtNegOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anzahl der im Unternehmen mit Forschungs- und Entwicklungsvorhaben beschäftigten Arbeitnehmer, für die aufgrund einer DBA-Regelung kein Lohnsteuerabzug vorgenommen wird, insgesamt im Wirtschaftsjahr (nach Vollzeitäquivalenten)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BALMitLStAbzugFuEVor" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bruttoarbeitslöhne, die der Arbeitgeber den mit Forschungs- und Entwicklungsvorhaben betrauten Arbeitnehmern unmittelbar gewährt und von denen der Lohnsteuerabzug gemäß § 38 Absatz 1 EStG vorgenommen wurde, insgesamt im Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BALOhneLStAbzugFuEVor" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bruttoarbeitslöhne, die der Arbeitgeber den mit Forschungs- und Entwicklungsvorhaben betrauten Arbeitnehmern unmittelbar gewährt und für die der Lohnsteuerabzug gemäß § 38 Absatz 1 EStG aufgrund einer DBA-Regelung nicht vorgenommen wurde, insgesamt im Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ANZukunftFuEVor" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ausgaben für die Zukunftssicherung der mit Forschungs- und Entwicklungsvorhaben betrauten Arbeitnehmer nach § 3 Nummer 62 EStG insgesamt im Wirtschaftsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PersGAngaben_797158589_CType">
+        <xs:sequence>
+            <xs:element name="AngEmpfangsbev" type="AngEmpfangsbev_m1760169268_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AngBet" type="AngBet_m1760169268_CType" minOccurs="0" maxOccurs="99999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngEmpfangsbev_m1760169268_CType">
+        <xs:sequence>
+            <xs:element name="BestEmpfangsbev" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Bescheid über die gesonderte und einheitliche Feststellung von Anteilen an der festgesetzten Forschungszulage soll an die nachfolgend bezeichnete Person mit Wirkung für und gegen alle Feststellungsbeteiligten bekannt gegeben werden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Anrede" type="String_MinL1_MaxL50_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anrede</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namenszeile 1</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NameZu" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namenszeile 2</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngBet_m1760169268_CType">
+        <xs:sequence>
+            <xs:element name="Nr" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Nummer des Feststellungsbeteiligten</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL1_MaxL12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Staat" type="NAEnum_LAND_OF_WORLD_2020_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>gegebenenfalls ausländischer Staat</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StNr" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IDNr" type="IDNrBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Identifikationsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ArtBeteiligter" type="Enum_ForschungZulAntrag_AllgAngaben_PersGAngaben_AngBet_ArtBeteiligter_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Art des Beteiligten</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AngAuft" type="AngAuft_1987743969_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngAuft_1987743969_CType">
+        <xs:sequence>
+            <xs:element name="Kap" type="DezimalzahlNichtNegOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Kapital am Ende des Wirtschaftsjahres</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Zaehler" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Zähler am Ende des Wirtschaftsjahres</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Nenner" type="GanzzahlPosOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Nenner am Ende des Wirtschaftsjahres</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenFuE_191298593_CType">
+        <xs:sequence>
+            <xs:element name="Antrag" type="Antrag_m737145423_CType" minOccurs="0" maxOccurs="99999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Antrag_m737145423_CType">
+        <xs:sequence>
+            <xs:element name="LfdNr" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorhabens-ID des Forschungs- und Entwicklungsvorhabens aus dem Bescheid der Bescheinigungsstelle Forschungszulage nach § 6 FZulG</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StNrFuEUnternehmen" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer des Unternehmens, in dem das Forschungs- und Entwicklungsvorhaben durchgeführt wird.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Bez" type="String_MinL1_MaxL1000_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bezeichnung des Forschungs- und Entwicklungsvorhabens</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Art" type="Enum_ForschungZulAntrag_AngabenFuE_Antrag_Art_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Art</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Kooperation" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Kooperationsvorhaben</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BegAuftragVom" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beginn der Arbeiten / Datum der Auftragserteilung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BeschBeigefuegt" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Bescheid der Bescheinigungsstelle Forschungszulage nach § 6 FZulG für dieses Forschungs- und Entwicklungsvorhaben liegt dem Finanzamt vor.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ErklNichtGeaendert" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die im Rahmen des Bescheinigungsverfahrens erklärten und dem Bescheid nach § 6 FZulG zu Grunde gelegten Angaben haben sich nicht verändert.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ZusatzEigenbetrieb" type="ZusatzEigenbetrieb_m593481150_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ZusatzAuftragsforschung" type="ZusatzAuftragsforschung_m593481150_CType" minOccurs="0" maxOccurs="100"/>
+            <xs:element name="ZusatzKooperation" type="ZusatzKooperation_m593481150_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="BMGVorhaben" type="BMGVorhaben_m593481150_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ZusatzEigenbetrieb_m593481150_CType">
+        <xs:sequence>
+            <xs:element name="WeitereFoerdermittelBeantragt" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Für dieses Forschungs- und Entwicklungsvorhaben wurden/werden weitere Fördermittel beantragt und/oder gewährt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="EigenforBest" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Das Forschungs- und Entwicklungsvorhaben wird nicht im Auftrag eines anderen Unternehmens ausgeführt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ALEigeneAN" type="ALEigeneAN_m1894738008_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="EigenleistungEinzeluntern" type="EigenleistungEinzeluntern_m1894738008_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="EigenleistungMituntern" type="EigenleistungMituntern_m1894738008_CType" minOccurs="0" maxOccurs="99999"/>
+            <xs:element name="AndereFoerdermittel" type="AndereFoerdermittel_m1894738008_CType" minOccurs="0" maxOccurs="99999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ALEigeneAN_m1894738008_CType">
+        <xs:sequence>
+            <xs:element name="ANAnzVollzeit" type="DezimalzahlPosOhneFuehrNull_MaxVK12_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anzahl der mit Forschungs- und Entwicklungstätigkeiten im Forschungs- und Entwicklungsvorhaben beschäftigten Arbeitnehmer (nach Vollzeitäquivalenten)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ANAnz" type="GanzzahlPosOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>dies entspricht einer Anzahl nach Köpfen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilBALMitLStAbzug" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteil Bruttoarbeitslohn, den der Arbeitgeber den Arbeitnehmern unmittelbar gewährt und von dem der Lohnsteuerabzug gemäß § 38 Absatz 1 EStG vorgenommen wurde, der auf die Forschungs- und Entwicklungstätigkeiten des Forschungs- und Entwicklungsvorhabens im Wirtschaftsjahr entfällt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilGesellschafter" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon Anteil Bruttoarbeitslohn an Gesellschafter einer Kapitalgesellschaft (in Zeile davor enthalten)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilBALMitLStAbzugErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon vor dem 01.07.2020 oder nach dem 30.06.2026 von den Arbeitnehmern bezogen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilBALMitLStAbzugZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon nach dem 30.06.2020 und vor dem 01.07.2026 von den Arbeitnehmern bezogen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilBALOhneLStAbzug" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteil Bruttoarbeitslohn, den der Arbeitgeber den Arbeitnehmern unmittelbar gewährt und von dem der Lohnsteuerabzug gemäß § 38 Absatz 1 EStG aufgrund einer DBA-Regelung nicht vorgenommen wurde, der auf die Forschungs- und Entwicklungstätigkeiten des Forschungs- und Entwicklungsvorhabens im Wirtschaftsjahr entfällt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilBALOhneLStAbzugErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon vor dem 01.07.2020 oder nach dem 30.06.2026 von den Arbeitnehmern bezogen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilBALOhneLStAbzugZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon nach dem 30.06.2020 und vor dem 01.07.2026 von den Arbeitnehmern bezogen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilANZukunft" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteilige Ausgaben für die Zukunftssicherung der Arbeitnehmer nach § 3 Nummer 62 EStG, die auf Forschungs- und Entwicklungstätigkeiten des Forschungs- und Entwicklungsvorhabens entfallen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilANZukunftErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon vor dem 01.07.2020 oder nach dem 30.06.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilANZukunftZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon nach dem 30.06.2020 und vor dem 01.07.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EigenleistungEinzeluntern_m1894738008_CType">
+        <xs:sequence>
+            <xs:element name="Leistung" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Eigene Forschungs- und Entwicklungstätigkeiten an dem Forschungs- und Entwicklungsvorhaben wurden geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StundenFuE" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Eigene Arbeitsstunden im jeweiligen Wirtschaftsjahr für Forschungs- und Entwicklungstätigkeit in diesem Forschungs- und Entwicklungsvorhaben</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StundenFuEErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon vor dem 01.07.2020 oder nach dem 30.06.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StundenFuEZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon nach dem 30.06.2020 und vor dem 01.07.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EigenleistungMituntern_m1894738008_CType">
+        <xs:sequence>
+            <xs:element name="NameGesellschafter" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name des Gesellschafters</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VereinbarungPersG" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Eine zivilrechtlich wirksame vertragliche Vereinbarung liegt vor</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GehaltPersG" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Tätigkeitsvergütung für Gesellschafter insgesamt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="VerguetungFuE" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Tätigkeitsvergütung für Forschungs- und Entwicklungstätigkeiten in diesem Forschungs- und Entwicklungsvorhaben</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StundenFuE" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Arbeitsstunden des Gesellschafters für Forschungs- und Entwicklungstätigkeiten in diesem Forschungs- und Entwicklungsvorhaben</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StundenFuEErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon vor dem 01.07.2020 oder nach dem 30.06.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StundenFuEZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon nach dem 30.06.2020 und vor dem 01.07.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AndereFoerdermittel_m1894738008_CType">
+        <xs:sequence>
+            <xs:element name="FoerdermittelGeber" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Fördermittelgeber</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BescheidVom" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Datum des Bewilligungsbescheids / der Zusage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DatAntrag" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Alternativ: Datum des Antrags</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderBetrag" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Förderbetrag</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderAufw" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Förderung liegen/lagen für dieses eigenbetrieblich durchgeführte FuE-Vorhaben die in diesem Antrag aufgeführten Lohnaufwendungen zu Grunde.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AngabenAufwend" type="AngabenAufwend_1539224461_CType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenAufwend_1539224461_CType">
+        <xs:sequence>
+            <xs:element name="AngabenHoeheFoerdermittel" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Höhe der Aufwendungen, die in die Bemessung der Förderung einbezogen wurden/werden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ZusatzAuftragsforschung_m593481150_CType">
+        <xs:sequence>
+            <xs:element name="AuftragBest" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Auftrag wurde nicht als Unterauftrag aus einer eigenen Beauftragung erteilt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AuftragNehmerEntgelt" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>An den Auftragnehmer gezahltes Entgelt im Wirtschaftsjahr insgesamt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AuftragNehmerEntgeltErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon vor dem 01.07.2020 oder nach dem 30.06.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AuftragNehmerEntgeltZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon nach dem 30.06.2020 und vor dem 01.07.2026 geleistet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="WeitereFoerdermittelBeantragt" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Für dieses Forschungs- und Entwicklungsvorhaben wurden/werden weitere Fördermittel beantragt und/oder gewährt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AndereFoerdermittel" type="AndereFoerdermittel_1825662099_CType" minOccurs="0" maxOccurs="99999"/>
+            <xs:element name="AuftragNehmer" type="AuftragNehmer_1825662099_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AndereFoerdermittel_1825662099_CType">
+        <xs:sequence>
+            <xs:element name="FoerdermittelGeber" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Fördermittelgeber</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BescheidVom" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Datum des Bewilligungsbescheids / der Zusage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DatAntrag" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Alternativ: Datum des Antrags</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderBetrag" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Förderbetrag</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderAufw" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Förderung liegen/lagen die in diesem Antrag aufgeführten Entgelte für Auftragsforschung zu Grunde.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AngabenAufwend" type="AngabenAufwend_964657272_CType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenAufwend_964657272_CType">
+        <xs:sequence>
+            <xs:element name="AngabenHoeheFoerdermittel" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Höhe der Aufwendungen, die in die Bemessung der Förderung einbezogen wurden/werden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AuftragNehmer_1825662099_CType">
+        <xs:sequence>
+            <xs:element name="ZustimmungDaten" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Zustimmung zur Übernahme der nachrichtlichen Angaben zu diesem Forschungs- und Entwicklungsvorhaben aus dem Bescheid der Bescheinigungsstelle Forschungszulage nach § 6 FZulG wird erteilt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Bez" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bezeichnung des Unternehmens</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL1_MaxL12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="UStIdNr" type="UStIdNrBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Umsatzsteuer-Identifikationsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Staat" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Staat</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ZusatzKooperation_m593481150_CType">
+        <xs:sequence>
+            <xs:element name="KooperationVerbundUntern" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Das Forschungs- und Entwicklungsvorhaben wird in Kooperation mit verbundenen Unternehmen durchgeführt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilKooperationVerbundUntern" type="DezimalzahlNichtNegOhneFuehrNull_MinW0p00_MaxW100p00_MaxVKm1_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteil, zu dem das Forschungs- und Entwicklungsvorhaben in Kooperation mit verbundenen Unternehmen durchgeführt wird (in Prozent).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="KooperationStbefrFEinr" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Das Forschungs- und Entwicklungsvorhaben wird in Kooperation mit steuerbefreiten Forschungseinrichtungen durchgeführt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilKooperationStbefrFEinr" type="DezimalzahlNichtNegOhneFuehrNull_MinW0p00_MaxW100p00_MaxVKm1_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteil, zu dem das Forschungs- und Entwicklungsvorhaben in Kooperation mit steuerbefreiten Forschungseinrichtungen durchgeführt wird (in Prozent).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="KooperationStpflUntern" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Das Forschungs- und Entwicklungsvorhaben wird in Kooperation mit anderen steuerpflichtigen Unternehmen durchgeführt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnteilKooperationStpflUntern" type="DezimalzahlNichtNegOhneFuehrNull_MinW0p00_MaxW100p00_MaxVKm1_MinNK2_MaxNK2_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anteil, zu dem das Forschungs- und Entwicklungsvorhaben in Kooperation mit anderen steuerpflichtigen Unternehmen durchgeführt wird (in Prozent).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BMGVorhaben_m593481150_CType">
+        <xs:sequence>
+            <xs:element name="AufwV01072020" type="AufwV01072020_m1759931883_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AufwN30062020" type="AufwN30062020_m1759931883_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AufwV01072020_m1759931883_CType">
+        <xs:sequence>
+            <xs:element name="AufwandALSummeGesamtErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der Arbeitslöhne für eigene Arbeitnehmer, soweit diese in diesem begünstigten Forschungs- und Entwicklungsvorhaben Forschungs- und Entwicklungstätigkeiten ausgeführt haben:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AbzugAndereFoerdErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Abzüglich Aufwendungen, für die eine andere Förderung beansprucht wird/wurde:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AufwandALFoerderfaehigErstesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Förderfähige Aufwendungen aus Arbeitslöhnen für eigene Arbeitnehmer, soweit diese in diesem begünstigten Forschungs- und Entwicklungsvorhaben Forschungs- und Entwicklungstätigkeiten ausgeführt haben (vor dem 01.07.2020):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AufwN30062020_m1759931883_CType">
+        <xs:sequence>
+            <xs:element name="AufwandALSummeGesamtZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der Arbeitslöhne für eigene Arbeitnehmer, soweit diese in diesem begünstigten Forschungs- und Entwicklungsvorhaben Forschungs- und Entwicklungstätigkeiten ausgeführt haben:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="RestAndereFoerdZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Abzüglich Aufwendungen, für die eine andere Förderung beansprucht wird/wurde (soweit nicht bereits bei den förderfähigen Aufwendungen, die vor dem 01.07.2020 entstanden sind, berücksichtigt):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AufwandALFoerderfaehigZweitesHj" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Förderfähige Aufwendungen aus Arbeitslöhnen für eigene Arbeitnehmer, soweit diese in diesem begünstigten Forschungs- und Entwicklungsvorhaben Forschungs- und Entwicklungstätigkeiten ausgeführt haben (nach dem 30.06.2020):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeMinimis_191298593_CType">
+        <xs:sequence>
+            <xs:element name="AngabenEigenleistung" type="AngabenEigenleistung_m1587736642_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AngabenEigenleistung_m1587736642_CType">
+        <xs:sequence>
+            <xs:element name="BeihilfeBezogen" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Im laufenden Kalenderjahr sowie in den zwei vorangegangenen Kalenderjahren wurden Beihilfen im Sinne der Verordnungen (EU) Nummer 1407/2013 der Kommission vom 18. Dezember 2013 über die Anwendung der Artikel 107 und 108 des Vertrags über die Arbeitsweise der Europäischen Union auf De-minimis-Beihilfen (De-minimis-Verordnung) oder nach der Verordnung (EU) Nummer 360/2012 (sogenannten DAWI-de-minimis-Verordnung) bezogen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Beihilfe" type="Beihilfe_1855026331_CType" minOccurs="0" maxOccurs="99999"/>
+            <xs:element name="DAWIBeihilfe" type="DAWIBeihilfe_1855026331_CType" minOccurs="0" maxOccurs="10"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Beihilfe_1855026331_CType">
+        <xs:sequence>
+            <xs:element name="BescheidVom" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Datum des Bewilligungsbescheids / der Zusage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BeihilfeGeber" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beihilfegeber</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BeihilfeWert" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beihilfewert</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DAWIBeihilfe_1855026331_CType">
+        <xs:sequence>
+            <xs:element name="BescheidVom" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Datum des Bewilligungsbescheids / der Zusage</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BeihilfeGeber" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beihilfegeber</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BeihilfeWert" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beihilfewert</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="WeitereVoraussetzung_191298593_CType">
+        <xs:sequence>
+            <xs:element name="UnternInSchwierigkeit" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Es handelt sich um ein Unternehmen in Schwierigkeiten im Sinne von Artikel 1 Absatz 4 Buchstabe c und Artikel 2 Nummer 18 der Verordnung (EU) Nummer 651/2014 der Europäischen Kommission vom 17. Juni 2014 zur Feststellung der Vereinbarkeit bestimmter Gruppen von Beihilfen mit dem Binnenmarkt in Anwendung der Artikel 107 und 108 des Vertrags über die Arbeitsweise der Europäischen Union (AGVO) (ABl. L 187 vom 26.6.2014, Seite 1).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="RueckForderungBeihilfe" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Es liegt keine Verpflichtung zur Rückzahlung von Beihilfen aufgrund eines früheren Beschlusses der Europäischen Kommission zur Feststellung der Unzulässigkeit einer Beihilfe und ihrer Unvereinbarkeit mit dem Binnenmarkt vor, der nicht nachgekommen ist.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="KMU" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der begünstigte Betrieb ist ein kleines oder mittleres Unternehmen im Sinne des Anhangs I der Verordnung (EU) Nummer 651/2014 der Kommission vom 17. Juni 2014 zur Feststellung der Vereinbarkeit bestimmter Gruppen von Beihilfen mit dem Binnenmarkt in Anwendung der Artikel 107 und 108 des Vertrags über die Arbeitsweise der Europäischen Union (AGVO) (ABl. L 187 vom 26.6.2014, Seite 1).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Berechnung_191298593_CType">
+        <xs:sequence>
+            <xs:element name="Bemessungsgrundlage" type="Bemessungsgrundlage_2031649530_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ErmittlungFZul" type="ErmittlungFZul_2031649530_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PruefungDeMinimis" type="PruefungDeMinimis_2031649530_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Bemessungsgrundlage_2031649530_CType">
+        <xs:sequence>
+            <xs:element name="AufwV01072020" type="AufwV01072020_2025513129_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AufwN30062020" type="AufwN30062020_2025513129_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FoerderfaehigeBMG" type="FoerderfaehigeBMG_2025513129_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AufwV01072020_2025513129_CType">
+        <xs:sequence>
+            <xs:element name="FoerderAufwEigenForsch" type="FoerderAufwEigenForsch_526484444_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FoerderAufwEigenleistung" type="FoerderAufwEigenleistung_526484444_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FoerderAufwAuftragForsch" type="FoerderAufwAuftragForsch_526484444_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ErsteZwischensumme" type="ErsteZwischensumme_526484444_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderAufwEigenForsch_526484444_CType">
+        <xs:sequence>
+            <xs:element name="AufwandALFoerderfaehigGesamt" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der förderfähigen Aufwendungen aus Arbeitslöhnen für eigene Arbeitnehmer, soweit diese in begünstigten Forschungs- und Entwicklungsvorhaben Forschungs- und Entwicklungstätigkeiten ausgeführt haben:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderAufwEigenleistung_526484444_CType">
+        <xs:sequence>
+            <xs:element name="ErklaerteArbeitsstundenEU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Erklärte Arbeitsstunden eines Einzelunternehmers:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderfaehigeArbeitsstundenEU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon maximal förderfähige Stunden: &#10;(Hinweis: X/12 x 2.080 Stunden; dabei ist X die Anzahl der Monate des Wirtschaftsjahres zwischen dem 02.01.2020 und dem 30.06.2020 und 2.080 Stunden sind die in einem Wirtschaftsjahr maximal zulässigen Arbeitsstunden, ermittelt aus 40 Wochenarbeitsstunden x 52 Wochen)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ErklaerteArbeitsstundenMU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Erklärte Arbeitsstunden von Gesellschaftern einer Mitunternehmerschaft:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderfaehigeArbeitsstundenMU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon maximal förderfähige Stunden: &#10;(Hinweis: X/12 x 2.080 Stunden; dabei ist X die Anzahl der Monate des Wirtschaftsjahres zwischen dem 02.01.2020 und dem 30.06.2020 und 2.080 Stunden sind die in einem Wirtschaftsjahr maximal zulässigen Arbeitsstunden, ermittelt aus 40 Wochenarbeitsstunden x 52 Wochen)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AufwandArbeitsstundenSumme" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der förderfähigen Aufwendungen aus Eigenleistungen:&#10;(Hinweis: maximal förderfähige Stunden x 40 Euro)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderAufwAuftragForsch_526484444_CType">
+        <xs:sequence>
+            <xs:element name="AuftragNehmerSummeGesamt" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe des Entgelts für Auftragsforschung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderfaehigAuftragNehmer" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Davon 60 Prozent förderfähig:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ErsteZwischensumme_526484444_CType">
+        <xs:sequence>
+            <xs:element name="ZwischensummeEins" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Zwischensumme der förderfähigen Aufwendungen, die nach dem 01.01.2020 und vor dem 01.07.2020 entstanden sind:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AufwN30062020_2025513129_CType">
+        <xs:sequence>
+            <xs:element name="FoerderAufwEigenForsch" type="FoerderAufwEigenForsch_m1724572113_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FoerderAufwEigenleistung" type="FoerderAufwEigenleistung_m1724572113_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FoerderAufwAuftragForsch" type="FoerderAufwAuftragForsch_m1724572113_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ZweiteZwischensumme" type="ZweiteZwischensumme_m1724572113_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderAufwEigenForsch_m1724572113_CType">
+        <xs:sequence>
+            <xs:element name="AufwandALFoerderfaehigGesamt" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der förderfähigen Aufwendungen im jeweiligen Wirtschaftsjahr aus Arbeitslöhnen für eigene Arbeitnehmer, soweit diese in diesem begünstigten Forschungs- und Entwicklungsvorhaben Forschungs- und Entwicklungstätigkeiten ausgeführt haben:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderAufwEigenleistung_m1724572113_CType">
+        <xs:sequence>
+            <xs:element name="ErklaerteArbeitsstundenEU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Erklärte Arbeitsstunden eines Einzelunternehmers:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderfaehigeArbeitsstundenEU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon maximal förderfähige Stunden: &#10;(Hinweis: X/12 x 2.080 Stunden; dabei ist X die Anzahl der Monate des Wirtschaftsjahres ab dem 01.07.2020 und 2.080 Stunden sind die in einem Wirtschaftsjahr maximal zulässigen Arbeitsstunden, ermittelt aus 40 Wochenarbeitsstunden x 52 Wochen)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ErklaerteArbeitsstundenMU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Erklärte Arbeitsstunden von Gesellschaftern einer Mitunternehmerschaft:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderfaehigeArbeitsstundenMU" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>davon maximal förderfähige Stunden: &#10;(Hinweis: X/12 x 2.080 Stunden; dabei ist X die Anzahl der Monate des Wirtschaftsjahres ab dem 01.07.2020 und 2.080 Stunden sind die in einem Wirtschaftsjahr maximal zulässigen Arbeitsstunden, ermittelt aus 40 Wochenarbeitsstunden x 52 Wochen)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AufwandArbeitsstundenSumme" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der förderfähigen Aufwendungen aus Eigenleistungen:&#10;(Hinweis: maximal förderfähige Stunden x 40 Euro)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderAufwAuftragForsch_m1724572113_CType">
+        <xs:sequence>
+            <xs:element name="AuftragNehmerSummeGesamt" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe des Entgelts aus Auftragsforschung im jeweiligen Wirtschaftsjahr:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FoerderfaehigAuftragNehmer" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Davon 60 Prozent förderfähig:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ZweiteZwischensumme_m1724572113_CType">
+        <xs:sequence>
+            <xs:element name="ZwischensummeZwei" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Zwischensumme der förderfähigen Aufwendungen, die nach dem 30.06.2020 entstanden sind:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FoerderfaehigeBMG_2025513129_CType">
+        <xs:sequence>
+            <xs:element name="HoechstensBMGEins" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Förderfähige Aufwendungen, die nach dem 01.01.2020 und vor dem 01.07.2020 entstanden sind (höchstens 2.000.000 Euro):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BemessungsgrundlageGesamt" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der förderfähigen Aufwendungen, die nach dem 01.01.2020 und vor dem 01.07.2020 entstanden sind (höchstens 2.000.000 Euro) und der förderfähigen Aufwendungen, die nach dem 30.06.2020 entstanden sind:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HoechstensBMGZwei" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Förderfähige Bemessungsgrundlage (Summe der förderfähigen Aufwendungen im Wirtschaftsjahr, höchstens 4.000.000 Euro):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HoechstensMaxFoerdBmg" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Maximal förderfähige Bemessungsgrundlage bei verbundenen Unternehmen:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ErmittlungFZul_2031649530_CType">
+        <xs:sequence>
+            <xs:element name="BeantragteFZul" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beantragte Forschungszulage (vorbehaltlich der Prüfung der förderfähigen Eigenleistungen durch Ihr Finanzamt):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PruefungDeMinimis_2031649530_CType">
+        <xs:sequence>
+            <xs:element name="AnsatzBMG" type="AnsatzBMG_963808759_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AnsatzOhneBMG" type="AnsatzOhneBMG_963808759_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AnsatzBMG_963808759_CType">
+        <xs:sequence>
+            <xs:element name="AnsatzBMGEins" type="GanzzahlOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Feststellung des geförderten Eigenanteils aufgrund der Begrenzung der Bemessungsgrundlage im 1. Halbjahr: Ansatz des Bemessungsgrundlagenhöchstbetrages bis 30.06.2020, aber förderfähige Bemessungsgrundlage unter 4.000.000 Euro</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnsatzBMGZwei" type="GanzzahlOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Feststellung des geförderten Eigenanteils aufgrund der Begrenzung der Bemessungsgrundlage im 2. Halbjahr: Ansatz des Bemessungsgrundlagenhöchstbetrags von 4.000.000 Euro bei der förderfähigen Bemessungsgrundlage:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FZulOhneBeihilfe" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die beantragte Forschungszulage enthält keine De-minimis-Beihilfe. Da Ihre förderfähigen Lohnaufwendungen und/oder die förderfähigen Aufwendungen der Auftragsforschung die Bemessungsgrundlagenhöchstgrenze bereits erreichen, entfällt die beantragte Forschungszulage nicht auf Eigenleistungen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AnsatzOhneBMG_963808759_CType">
+        <xs:sequence>
+            <xs:element name="FoerderAufwand" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Summe der förderfähigen Eigenleistungen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FZulAlsBeihilfe" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der auf die Eigenleistungen entfallende Teil der Forschungszulage beträgt: (25 Prozent der Summe der förderfähigen Eigenleistungen):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DeMinimisBeihilfe" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beihilfewert bereits erhaltener De-minimis-Beihilfen (im Kalenderjahr und den zwei vorausgegangenen Jahren):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DeMinimisDAWIBeihilfe" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beihilfewert bereits erhaltender De-minimis-Beihilfen und/oder DAWI-de-minimis-Beihilfen (im Kalenderjahr und den zwei vorausgegangenen Jahren):</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FZulMitDeMinimis" type="GanzzahlNichtNegOhneFuehrNull_MaxVK12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die Forschungszulage wird unter Berücksichtigung der De-Minimis-Verordnung beantragt in Höhe von:</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Erkl_191298593_CType">
+        <xs:sequence>
+            <xs:element name="Bestaetigung" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ich erkläre, dass ich die vorstehenden Angaben wahrheitsgemäß nach bestem Wissen und Gewissen gemacht habe und sie durch entsprechende Unterlagen belegen kann. Mir ist bekannt, dass die Angabe falscher Tatsachen sowie das Unterlassen einer Anzeige strafrechtliche Folgen nach sich ziehen können (§§ 370, 153 AO).&#10;Ich erkläre ferner, dass ich die Anwendung der Verordnung (EG) Nummer 1407/2013 der Kommission vom 18. Dezember 2013 als Rechtsgrundlage anerkenne und dass mir bekannt ist, dass die vorstehenden Angaben steuerlich erhebliche Tatsachen im Sinne von § 370 AO sind. Außerdem ist mir bekannt, dass zu den steuerlich erheblichen Tatsachen insbesondere etwaige Sachverhalte gehören, die durch Scheingeschäfte und Scheinhandlungen verdeckt werden, sowie Rechtsgeschäfte oder Handlungen unter Missbrauch von Gestaltungsmöglichkeiten im Zusammenhang mit der in Anspruch genommenen Forschungszulage. Das gilt auch für nachträgliche Änderungen von Vereinbarungen oder Rechtshandlungen, die mit dem Ziel vorgenommen werden, den Zeitpunkt des Beginns des Investitionsvorhabens oder des Investitionsabschlusses in eine Zeit, die eine Forschungszulage bewirkt, zu verlegen, um dadurch eine Forschungszulage oder eine höhere Forschungszulage in Anspruch zu nehmen.&#10;Ich werde dem Finanzamt unverzüglich anzeigen, wenn sich Angaben in diesem Antrag nachträglich ändern, die Auswirkungen auf die Festsetzung der Forschungszulage haben.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="UnterrichtungBest" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ich bestätige, dass ich die Unterrichtungen zum Schutz und zur Veröffentlichung der im Rahmen des Antrags auf Forschungszulage übermittelten personenbezogenen Daten zur Kenntnis genommen habe und stimme der Veröffentlichung zu.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Mitwirkung" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Antrag wurde unter Mitwirkung eines Angehörigen der steuerberatenden Berufe im Sinne der §§ 3 und 4 StBerG angefertigt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Empfangsbevoll" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Forschungszulagenbescheid soll einem abweichenden Empfänger zugesandt werden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Mitwirkender" type="Mitwirkender_m2019655635_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AbwEmpf" type="AbwEmpf_m2019655635_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Mitwirkender_m2019655635_CType">
+        <xs:sequence>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="String_MinL1_MaxL51_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer, Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Tel" type="String_MinL1_MaxL55_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Telefon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ZusatzAngaben" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>zusätzliche Angaben</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MandantNr" type="String_MinL1_MaxL60_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Mandantennummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BearbeiterKz" type="String_MinL1_MaxL55_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bearbeiterkennzeichen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AbwEmpf_m2019655635_CType">
+        <xs:sequence>
+            <xs:element name="Anrede" type="String_MinL1_MaxL50_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anrede</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namenszeile 1</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NameZu" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namenszeile 2</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

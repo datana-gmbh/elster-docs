@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Schema automatisch generiert von ElsterRules 47.0.0 -->
+<!-- Schema entsprechend eXML-Spezifikation Version 1.8 -->
+<!-- VaSt_ZUS - 201901 - 2.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- XML-Typdefinitionen fuer eXML -->
+    <xs:simpleType name="ContentSType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FieldCType">
+        <xs:simpleContent>
+            <xs:extension base="ContentSType"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="ContentSTypeNoMaxLen">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FieldCTypeNoMaxLen">
+        <xs:simpleContent>
+            <xs:extension base="ContentSTypeNoMaxLen"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!-- Definition der datenartspezifischen eXML-Struktur -->
+    <xs:element name="VaSt_ZUS">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Behoerde">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Name" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BetroffenerFall">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="BetroffenePerson">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="NatPerson">
+                                            <xs:complexType>
+                                                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                                    <xs:element name="Blockname" type="FieldCType"/>
+                                                    <xs:element name="IdNr" type="FieldCType"/>
+                                                    <xs:element name="Name" type="FieldCType"/>
+                                                    <xs:element name="NamensVorsatz" type="FieldCType"/>
+                                                    <xs:element name="NamensZusatz" type="FieldCType"/>
+                                                    <xs:element name="Titel" type="FieldCType"/>
+                                                    <xs:element name="Vorname" type="FieldCType"/>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Meldejahr" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Eingangsdatum" type="FieldCType"/>
+                <xs:element name="Zahlungsdaten">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Beginn" type="FieldCType"/>
+                            <xs:element name="Betrag" type="FieldCType"/>
+                            <xs:element name="Ende" type="FieldCType"/>
+                            <xs:element name="Waehrung" type="FieldCType"/>
+                            <xs:element name="Zahlungsart" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:attribute name="version" fixed="201901" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

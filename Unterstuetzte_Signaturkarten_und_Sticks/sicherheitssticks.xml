@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sicherheitssticks SYSTEM "sicherheitssticks.dtd">
+<!--
+	Description: Zusatzinformationen fuer Sicherheitssticks fuer ELSTER
+	File name: sicherheitssticks.xml
+	File version: 54.0.0.0
+	Stand: 25.04.2022
+-->
+<sicherheitssticks>
+	<stick 
+		tokensubtype="1" 
+		name="StarSign Crypto USB Token (S)" 
+		pindlgtxt="PIN" 
+		url="http://www.sicherheitsstick.de" 
+		win32dll="aetpkss1.dll" 
+		win64dll="aetpkss1.dll" 
+		linux32dll="libaetpkss.so" 
+		linux64dll="libaetpkss.so" 
+		mac32dllppc="" 
+		mac32dllintl="libaetpkss.dylib" 
+		mac64dllintl="libaetpkss.dylib" 
+		description="Sicherheitsstick für ELSTER 2048 Bit">
+		G&amp;D StarSign Crypto USB Token (S) für ELSTER
+	</stick>
+	<stick 
+		tokensubtype="1" 
+		name="StarSign Token USB 500 mit SmartCafeExpert 3.1 Chip" 
+		pindlgtxt="PIN" 
+		url="http://www.sicherheitsstick.de" 
+		win32dll="starsignpkcs11_w32.dll" 
+		win64dll="starsignpkcs11_w64.dll" 
+		linux32dll="libstarsignpkcs11.so" 
+		linux64dll="" 
+		mac32dllppc="" 
+		mac32dllintl="libstarsignpkcs11.dylib"
+		mac64dllintl="" 
+		description="Sicherheitsstick für ELSTER 2048 Bit">
+		G&amp;D StarSign USB Token für ELSTER
+	</stick>
+</sicherheitssticks>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+	<TransferHeader version="11">
+		<Verfahren>ElsterLavendel</Verfahren>
+		<DatenArt>ELeVAntragELStAM</DatenArt>
+		<Vorgang>send-Auth</Vorgang>
+		<Testmerker>700000004</Testmerker>
+		<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>Testpoint ELSTER;Mustergasse;42;a;im Hinterhof;12345;Musterstadt;Deutschland;089/1234567890;tester@tpe.qs.de</DatenLieferant>
+		<Datei>
+			<Verschluesselung>CMSEncryptedData</Verschluesselung>
+			<Kompression>GZIP</Kompression>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="11">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="F">1096</Empfaenger>
+				<Hersteller>
+					<ProduktName>Testpoint ELSTER</ProduktName>
+					<ProduktVersion>42</ProduktVersion>
+				</Hersteller>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<ELeVAntragELStAM xmlns="http://finkonsens.de/elster/elsterlavendel/elevantragelstam/v3" version="3">
+					<ELStAM>
+						<OrdNrArt>S</OrdNrArt>
+						<Stnr>1096081508187</Stnr>
+						<Antragsteller>
+							<PersIdNr>04452397687</PersIdNr>
+							<AnredeId>2</AnredeId>
+							<Vorname>Beate</Vorname>
+							<Name>Neumann</Name>
+							<GebDatum>01.01.2003</GebDatum>
+							<GebName>Schmidt</GebName>
+							<Berufsbez>Köchin</Berufsbez>
+							<Adrkette>
+								<AuslAdr>
+									<Str>Muster Weg</Str>
+									<HausNr>3</HausNr>
+									<HausNrZu>a</HausNrZu>
+									<AdressErg>im OG</AdressErg>
+									<Plz>4-BZ-7W</Plz>
+									<Ort>Testort</Ort>
+									<StaatId>Österreich</StaatId>
+								</AuslAdr>
+							</Adrkette>
+							<Telefon>
+								<IntVorw>0043</IntVorw>
+								<NatVorw>2323</NatVorw>
+								<RufNr>1234</RufNr>
+							</Telefon>
+						</Antragsteller>
+						<Uebermittler>
+							<Bezeichnung>Übermittler</Bezeichnung>
+							<Vorname>Andreas</Vorname>
+							<Vorsatz>van</Vorsatz>
+							<Name>Weber</Name>
+							<Zusatz>Dr.</Zusatz>
+							<Adrkette>
+								<PostfAdrInl>
+									<Postfach>1234</Postfach>
+									<Plz>99999</Plz>
+									<Ort>Beispielshausen</Ort>
+								</PostfAdrInl>
+							</Adrkette>
+							<Kommunikation>
+								<Email>
+									<Adresse>beispiel-test@muster.de</Adresse>
+								</Email>
+							</Kommunikation>
+						</Uebermittler>
+						<SperrFreischaltung>
+							<TeilSperr>
+								<SperrungAg>
+									<Name>Fuchs</Name>
+									<Stnr>9181081508155</Stnr>
+								</SperrungAg>
+								<SperrungAg>
+									<Name>Fischer</Name>
+									<Stnr>4079081508151</Stnr>
+								</SperrungAg>
+							</TeilSperr>
+						</SperrFreischaltung>
+					</ELStAM>
+				</ELeVAntragELStAM>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

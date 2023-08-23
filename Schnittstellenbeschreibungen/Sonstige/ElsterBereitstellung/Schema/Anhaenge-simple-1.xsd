@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Anhaenge" type="AnhaengeCType"/>
+	<xs:complexType name="AnhaengeCType">
+		<xs:sequence>
+			<xs:element name="Anhang" type="AnhangCType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="version" use="required" fixed="1"/>
+	</xs:complexType>
+	<xs:complexType name="AnhangCType">
+		<xs:sequence>
+			<xs:element name="Dateibezeichnung" type="StringBaseSType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Name der Datei</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Dateityp" type="StringBaseSType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Dateityp, z.B. "application/pdf"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Dateiinhalt" type="xs:base64Binary" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Inhalt der Datei, Base64 kodiert</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Virengeprueft" type="TrueFalseBaseSType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Normalisiert" type="TrueFalseBaseSType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Loeschgrund" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Hinweise" type="HinweiseCType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Wird nicht von BEM gespeichert</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TrueFalseBaseSType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="true">
+				<xs:annotation>
+					<xs:documentation>Ja</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="false">
+				<xs:annotation>
+					<xs:documentation>Nein</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HinweiseCType">
+		<xs:sequence>
+			<xs:element name="Hinweis" type="HinweisCType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HinweisCType">
+		<xs:sequence>
+			<xs:element name="Hinweistext" type="StringBaseSType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Dieses Element darf nur von der Finanzverwaltung genutzt werden.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="StringBaseSType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".+">
+				<xs:annotation>
+					<xs:documentation>Zeichensatz Unicode, Zeilenumbrüche und Leerangaben unterbinden.</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

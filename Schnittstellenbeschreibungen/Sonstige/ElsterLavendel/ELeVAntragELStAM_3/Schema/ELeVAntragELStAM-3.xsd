@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema automatisch generiert von ElsterRules 47.0.0 -->
+<!-- Schema entsprechend eXML-Spezifikation Version 2.0 -->
+<!-- ELeVAntragELStAM - 3 - 4.0 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://finkonsens.de/elster/elsterlavendel/elevantragelstam/v3" targetNamespace="http://finkonsens.de/elster/elsterlavendel/elevantragelstam/v3" xmlns:exml="http://finkonsens.de/elster/elsterlavendel/elevantragelstam/v3">
+    <!-- XML-Typdefinitionen fuer eXML -->
+    <!-- Definition der datenartspezifischen eXML-Struktur -->
+    <xs:simpleType name="EMailBaseSType">
+        <xs:annotation>
+            <xs:documentation>EMail</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([^@]+)(@)([^@]+)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlNichtNegOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:pattern value="[1-9].*|0">
+                <xs:annotation>
+                    <xs:documentation>Kein Vorzeichen, Einträge der Form '0' oder erste Ziffer ungleich '0'</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlPosOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="[1-9].*">
+                <xs:annotation>
+                    <xs:documentation>Kein Vorzeichen, erste Ziffer ungleich '0'</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StringBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[&#x20;-&#x7e;&#xa1;-&#xa3;&#xa5;-&#xa5;&#xa7;-&#xa7;&#xaa;-&#xac;&#xae;-&#xb3;&#xb5;-&#xb5;&#xb9;-&#xbb;&#xbf;-&#xff;&#x152;-&#x153;&#x160;-&#x161;&#x178;-&#x178;&#x17d;-&#x17e;&#x20ac;-&#x20ac;]+">
+                <xs:annotation>
+                    <xs:documentation>Zeichensatz Standard_E_V2, Zeilenumbrüche und Leerangaben unterbinden</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="BundesfinanzamtsnummerBaseSType">
+        <xs:annotation>
+            <xs:documentation>Bundesfinanzamtsnummer</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DatumJJJJBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9][0-9][0-9][1-9]|[0-9][0-9][1-9][0-9]|[0-9][1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])">
+                <xs:annotation>
+                    <xs:documentation>Art der Teilbekanntheit: BEKANNT</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DatumTTpMMpJJJJBekanntBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])\.(10|11|12|01|02|03|04|05|06|07|08|09)\.([0-9][0-9][0-9][1-9]|[0-9][0-9][1-9][0-9]|[0-9][1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])">
+                <xs:annotation>
+                    <xs:documentation>Art der Teilbekanntheit: BEKANNT</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EMail_MinLm1_MaxL128_SType">
+        <xs:restriction base="EMailBaseSType">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="128"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ELStAM_AenderungElstam_StklWechsel_StklBisher_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>I</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>II</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>III</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:documentation>IV</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:documentation>V</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ELStAM_AenderungElstam_StklWechsel_StklNeu_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>I</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>II</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>III</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:documentation>IV</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="5">
+                <xs:annotation>
+                    <xs:documentation>V</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_ELStAM_Antragsteller_AnredeId_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>Frau</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>Herr</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlNichtNegOhneFuehrNull_Muster1432008049_SType">
+        <xs:restriction base="GanzzahlNichtNegOhneFuehrNullBaseSType">
+            <xs:pattern value=".{0,5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlPosOhneFuehrNull_Muster1432008049_SType">
+        <xs:restriction base="GanzzahlPosOhneFuehrNullBaseSType">
+            <xs:pattern value=".{0,5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IDNrBaseSType">
+        <xs:annotation>
+            <xs:documentation>IDNr</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{11}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Ja1BaseSType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType">
+        <xs:restriction base="StringBaseSType">
+            <xs:annotation>
+                <xs:documentation>Afghanistan,Ägypten,Albanien,Algerien,Andorra,Angola,Antigua und Barbuda,Äquatorialguinea,Argentinien,Armenien,Aserbaidschan,Äthiopien,Australien,Bahamas,Bahrain,Bangladesch,Barbados,Belgien,Belize,Benin,Bhutan,Bolivien,Bosnien und Herzegowina,Botsuana,Brasilien,Brunei Darussalam,Bulgarien,Burkina Faso,Burundi,Chile,China,Cookinseln,Costa Rica,Cote d&apos;Ivoire,Dänemark,Dominica,Dominikanische Republik,Dschibuti,Ecuador,El Salvador,Eritrea,Estland,Eswatini,Fidschi,Finnland,Frankreich,Gabun,Gambia,Georgien,Ghana,Grenada,Griechenland,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Indien,Indonesien,Irak,Iran,Irland,Island,Israel,Italien,Jamaika,Japan,Jemen,Jordanien,Kambodscha,Kamerun,Kanada,Kap Verde,Kasachstan,Katar,Kenia,Kirgisistan,Kiribati,Kolumbien,Komoren,Kongo,Kongo, Demokratische Republik,Korea, Demokratische Volksrepublik,Korea, Republik,Kosovo,Kroatien,Kuba,Kuwait,Laos,Lesotho,Lettland,Libanon,Liberia,Libyen,Liechtenstein,Litauen,Luxemburg,Madagaskar,Malawi,Malaysia,Malediven,Mali,Malta,Marokko,Marshallinseln,Mauretanien,Mauritius,Mexiko,Föderierte Staaten von Mikronesien,Moldau,Monaco,Mongolei,Montenegro,Mosambik,Myanmar,Namibia,Nauru,Nepal,Neuseeland,Nicaragua,Niederlande,Niger,Nigeria,Niue,Nordmazedonien,Norwegen,Oman,Österreich,Pakistan,Palau,Panama,Papua-Neuguinea,Paraguay,Peru,Philippinen,Polen,Portugal,Ruanda,Rumänien,Russische Föderation,Salomonen,Sambia,Samoa,San Marino,Sao Tome und Principe,Saudi-Arabien,Schweden,Schweiz,Senegal,Serbien,Seychellen,Sierra Leone,Simbabwe,Singapur,Slowakei,Slowenien,Somalia,Spanien,Sri Lanka,St. Kitts und Nevis,St. Lucia,St. Vincent und die Grenadinen,Südafrika,Sudan,Südsudan,Surinam,Syrien,Tadschikistan,Tansania,Thailand,Timor-Leste,Togo,Tonga,Trinidad und Tobago,Tschad,Tschechische Republik,Tunesien,Türkei,Turkmenistan,Tuvalu,Uganda,Ukraine,Ungarn,Uruguay,USA,Usbekistan,Vanuatu,Vatikanstadt,Venezuela,Vereinigte Arabische Emirate,Vereinigtes Königreich,Vietnam,Weißrussland,Zentralafrikanische Republik,Zypern</xs:documentation>
+            </xs:annotation>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SteuernummerBaseSType">
+        <xs:annotation>
+            <xs:documentation>Steuernummer</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{4})0[0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL10_Muster91555_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+            <xs:pattern value="\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL12_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL1_Muster83686_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1"/>
+            <xs:pattern value="S|O"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL20_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL25_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="25"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL30_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL46_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="46"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL50_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL60_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="60"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL6_Musterm1643987249_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="6"/>
+            <xs:pattern value="[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL72_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="72"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL99999_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL2_MaxL13_Muster1255396078_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="13"/>
+            <xs:pattern value="\d+-?\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL2_MaxL7_Musterm1317310723_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="7"/>
+            <xs:pattern value="(00|\+)\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL5_MaxL5_Muster2084297628_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="5"/>
+            <xs:pattern value="([0]{1}[1-9]{1}[0-9]{3})|([1-9]{1}[0-9]{4})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="ELeVAntragELStAM" type="ELeVAntragELStAM_CType"/>
+    <xs:complexType name="ELeVAntragELStAM_CType">
+        <xs:sequence>
+            <xs:element name="ELStAM" type="ELStAM_2065840988_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="version" fixed="3" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="ELStAM_2065840988_CType">
+        <xs:sequence>
+            <xs:element name="Bundesfinanzamtsnummer" type="BundesfinanzamtsnummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bundesfinanzamtsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OrdNrArt" type="String_MinL1_MaxL1_Muster83686_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ordnungsnummernart</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Stnr" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FaBisher" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bei Wohnsitzwechsel: bisheriges Finanzamt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Antragsteller" type="Antragsteller_1135074794_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Uebermittler" type="Uebermittler_1135074794_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="SperrFreischaltung" type="SperrFreischaltung_1135074794_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AenderungElstam" type="AenderungElstam_1135074794_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Antragsteller_1135074794_CType">
+        <xs:sequence>
+            <xs:element name="PersIdNr" type="IDNrBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Identifikationsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnredeId" type="Enum_ELStAM_Antragsteller_AnredeId_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anrede</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Titel" type="String_MinL1_MaxL30_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Titel</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorsatz" type="String_MinL1_MaxL25_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namensvorsatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Zusatz" type="String_MinL1_MaxL60_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namenszusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GebDatum" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Geburtsdatum</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GebName" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Gegebenenfalls Geburtsname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Berufsbez" type="String_MinL1_MaxL50_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ausgeübter Beruf</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Adrkette" type="Adrkette_m1604176184_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Telefon" type="Telefon_m1604176184_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Adrkette_m1604176184_CType">
+        <xs:sequence>
+            <xs:element name="StrAdr" type="StrAdr_m132074162_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PostfAdr" type="PostfAdr_m132074162_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AuslAdr" type="AuslAdr_m132074162_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StrAdr_m132074162_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdressErg" type="String_MinL1_MaxL46_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Adressergänzung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PostfAdr_m132074162_CType">
+        <xs:sequence>
+            <xs:element name="Postfach" type="String_MinL1_MaxL6_Musterm1643987249_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postfach</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AuslAdr_m132074162_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlPosOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdressErg" type="String_MinL1_MaxL46_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Adressergänzung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL1_MaxL12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StaatId" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Land</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Telefon_m1604176184_CType">
+        <xs:sequence>
+            <xs:element name="IntVorw" type="String_MinL2_MaxL7_Musterm1317310723_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorwahl international</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NatVorw" type="String_MinL1_MaxL10_Muster91555_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorwahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="RufNr" type="String_MinL2_MaxL13_Muster1255396078_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Rufnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Uebermittler_1135074794_CType">
+        <xs:sequence>
+            <xs:element name="Bezeichnung" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bezeichnung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Titel" type="String_MinL1_MaxL30_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Titel</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorsatz" type="String_MinL1_MaxL25_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namensvorsatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Zusatz" type="String_MinL1_MaxL60_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Namenszusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Adrkette" type="Adrkette_1439904198_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Kommunikation" type="Kommunikation_1439904198_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Adrkette_1439904198_CType">
+        <xs:sequence>
+            <xs:element name="StrAdrInl" type="StrAdrInl_m1382961076_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="StrAdrAusl" type="StrAdrAusl_m1382961076_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PostfAdrInl" type="PostfAdrInl_m1382961076_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="GKAdrInl" type="GKAdrInl_m1382961076_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StrAdrInl_m1382961076_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlNichtNegOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnschriftZu" type="String_MinL1_MaxL46_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anschriftenzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StrAdrAusl_m1382961076_CType">
+        <xs:sequence>
+            <xs:element name="Str" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNr" type="GanzzahlNichtNegOhneFuehrNull_Muster1432008049_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="HausNrZu" type="String_MinL1_MaxL20_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AnschriftZu" type="String_MinL1_MaxL46_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Anschriftenzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL1_MaxL12_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StaatId" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Land</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PostfAdrInl_m1382961076_CType">
+        <xs:sequence>
+            <xs:element name="Postfach" type="String_MinL1_MaxL6_Musterm1643987249_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postfach</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GKAdrInl_m1382961076_CType">
+        <xs:sequence>
+            <xs:element name="Plz" type="String_MinL5_MaxL5_Muster2084297628_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Kommunikation_1439904198_CType">
+        <xs:sequence>
+            <xs:element name="Telefon" type="Telefon_m767059854_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Email" type="Email_m767059854_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Telefon_m767059854_CType">
+        <xs:sequence>
+            <xs:element name="IntVorw" type="String_MinL2_MaxL7_Musterm1317310723_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorwahl international</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NatVorw" type="String_MinL1_MaxL10_Muster91555_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorwahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="RufNr" type="String_MinL2_MaxL13_Muster1255396078_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Rufnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Email_m767059854_CType">
+        <xs:sequence>
+            <xs:element name="Adresse" type="EMail_MinLm1_MaxL128_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>E-Mail-Adresse</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SperrFreischaltung_1135074794_CType">
+        <xs:sequence>
+            <xs:element name="VollSperrFrei" type="VollSperrFrei_m1122091859_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="TeilSperr" type="TeilSperr_m1122091859_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="TeilFrei" type="TeilFrei_m1122091859_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VollSperrFrei_m1122091859_CType">
+        <xs:sequence>
+            <xs:element name="Vollsperrung" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ich bitte, meine ELStAM künftig nicht mehr zu bilden (Vollsperrung). Hinweis: Die Vollsperrung führt zur Anwendung der Steuerklasse VI.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vollfreischaltung" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ich bitte, meine ELStAM künftig für alle Arbeitgeber freizuschalten (nach einer Voll-/Teilsperrung).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TeilSperr_m1122091859_CType">
+        <xs:sequence>
+            <xs:element name="SperrungAg" type="SperrungAg_1178475643_CType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SperrungAg_1178475643_CType">
+        <xs:sequence>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Stnr" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TeilFrei_m1122091859_CType">
+        <xs:sequence>
+            <xs:element name="FreischaltungAg" type="FreischaltungAg_m612611765_CType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FreischaltungAg_m612611765_CType">
+        <xs:sequence>
+            <xs:element name="Name" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Stnr" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AenderungElstam_1135074794_CType">
+        <xs:sequence>
+            <xs:element name="StklWechsel" type="StklWechsel_m498431357_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="StklDreiSonder" type="StklDreiSonder_m498431357_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Kinder" type="Kinder_m498431357_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StklWechsel_m498431357_CType">
+        <xs:sequence>
+            <xs:element name="StklBisher" type="Enum_ELStAM_AenderungElstam_StklWechsel_StklBisher_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die bisherige Steuerklasse ist</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StklNeu" type="Enum_ELStAM_AenderungElstam_StklWechsel_StklNeu_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die neue, zu berücksichtigende Steuerklasse ist</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StklDreiSonder_m498431357_CType">
+        <xs:sequence>
+            <xs:element name="SonderEwr" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ich bin Staatsangehöriger eines EU/EWR-Mitgliedstaats, habe meinen Wohnsitz oder gewöhnlichen Aufenthalt im Inland und mein Ehegatte lebt in einem anderen EU/EWR-Mitgliedstaat oder in der Schweiz. Ich bitte, bei mir die Steuerklasse III zu berücksichtigen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NachweisSonderEwr" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Nachweis wird nachgereicht (zum Beispiel Wohnsitzbescheinigung/Anlage Grenzpendler EU/EWR)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SonderScheidung" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Mein geschiedener Ehegatte hat im Scheidungsjahr wieder geheiratet. Ich bitte, bei mir für dieses Kalenderjahr die Steuerklasse III zu berücksichtigen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ScheidungJahr" type="DatumJJJJBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Scheidungsjahr</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Kinder_m498431357_CType">
+        <xs:sequence>
+            <xs:element name="KindOhne" type="KindOhne_1494566564_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="KindTeilOhne" type="KindTeilOhne_1494566564_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="KindTeilMit" type="KindTeilMit_1494566564_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="KindOhne_1494566564_CType">
+        <xs:sequence>
+            <xs:element name="KindKomplettOhne" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ich bitte, keine Kinderfreibeträge zu berücksichtigen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="KindTeilOhne_1494566564_CType">
+        <xs:sequence>
+            <xs:element name="KindOhneFreibetrag" type="KindOhneFreibetrag_m725740966_CType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="KindOhneFreibetrag_m725740966_CType">
+        <xs:sequence>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname des Kindes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FamName" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Gegebenenfalls abweichender Familienname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GebDatum" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Geburtsdatum</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PersIdNr" type="IDNrBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Identifikationsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="KindTeilMit_1494566564_CType">
+        <xs:sequence>
+            <xs:element name="KindMitFreibetrag" type="KindMitFreibetrag_1368477650_CType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="KindMitFreibetrag_1368477650_CType">
+        <xs:sequence>
+            <xs:element name="Vorname" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname des Kindes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FamName" type="String_MinL1_MaxL72_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Gegebenenfalls abweichender Familienname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GebDatum" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Geburtsdatum</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PersIdNr" type="IDNrBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Identifikationsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

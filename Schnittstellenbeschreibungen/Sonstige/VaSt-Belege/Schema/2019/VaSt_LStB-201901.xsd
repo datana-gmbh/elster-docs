@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Schema automatisch generiert von ElsterRules 47.0.0 -->
+<!-- Schema entsprechend eXML-Spezifikation Version 1.8 -->
+<!-- VaSt_LStB - 201901 - 2.2 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.elster.de/2002/XMLSchema" targetNamespace="http://www.elster.de/2002/XMLSchema">
+    <!-- XML-Typdefinitionen fuer eXML -->
+    <xs:simpleType name="ContentSType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FieldCType">
+        <xs:simpleContent>
+            <xs:extension base="ContentSType"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="ContentSTypeNoMaxLen">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FieldCTypeNoMaxLen">
+        <xs:simpleContent>
+            <xs:extension base="ContentSTypeNoMaxLen"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!-- Definition der datenartspezifischen eXML-Struktur -->
+    <xs:element name="VaSt_LStB">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Allgemein">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="IdNr" type="FieldCType"/>
+                            <xs:element name="eTIN" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ArbGName" type="FieldCType"/>
+                <xs:element name="Besteuerungsgrund">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="AnzahlArbTag" type="FieldCType"/>
+                            <xs:element name="AnzahlU" type="FieldCType"/>
+                            <xs:element name="ArbgAnteilBerufsVers" type="FieldCType"/>
+                            <xs:element name="ArbgAnteilRenVers" type="FieldCType"/>
+                            <xs:element name="ArbgAnteilZusatzVers" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilArblVers" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilBerufsVers" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilKrankVers" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilPflegVers" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilRenVers" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilWBUmlage" type="FieldCType"/>
+                            <xs:element name="ArbnAnteilZusatzVers" type="FieldCType"/>
+                            <xs:element name="ArbnKiSteuer" type="FieldCType"/>
+                            <xs:element name="BeitrPrKrankVers" type="FieldCType"/>
+                            <xs:element name="BruttoArbLohn" type="FieldCType"/>
+                            <xs:element name="EhegKiSteuer" type="FieldCType"/>
+                            <xs:element name="ErmStBetrMKalJahr" type="FieldCType"/>
+                            <xs:element name="ErmStVBezMKalJahr">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Jahr" type="FieldCType"/>
+                                        <xs:element name="Wert" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="FreibetragDbaTuerkei" type="FieldCType"/>
+                            <xs:element name="Grossbuchstaben" type="FieldCType"/>
+                            <xs:element name="Kammerbeitrag">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Bundesland" type="FieldCType"/>
+                                        <xs:element name="Wert" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="KiSteuerArbnMKalJahr" type="FieldCType"/>
+                            <xs:element name="KiSteuerEhegMKalJahr" type="FieldCType"/>
+                            <xs:element name="KurzArbGeld" type="FieldCType"/>
+                            <xs:element name="LSteuer" type="FieldCType"/>
+                            <xs:element name="LSteuerMKalJahr" type="FieldCType"/>
+                            <xs:element name="NErmStVBezMKalJahr">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Jahr" type="FieldCType"/>
+                                        <xs:element name="Wert" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PauschArbgLeistg" type="FieldCType"/>
+                            <xs:element name="Soli" type="FieldCType"/>
+                            <xs:element name="SoliMKalJahr" type="FieldCType"/>
+                            <xs:element name="StFreiArbLohnATE" type="FieldCType"/>
+                            <xs:element name="StFreiArbLohnDBA" type="FieldCType"/>
+                            <xs:element name="StFreiArbgLeistg" type="FieldCType"/>
+                            <xs:element name="StFreiDopHaushalt" type="FieldCType"/>
+                            <xs:element name="StFreiFahrtKAusw" type="FieldCType"/>
+                            <xs:element name="StFreiGeKrankVers" type="FieldCType"/>
+                            <xs:element name="StFreiGePflegVers" type="FieldCType"/>
+                            <xs:element name="StFreiPrKrankVers" type="FieldCType"/>
+                            <xs:element name="StFreiVerpfleg" type="FieldCType"/>
+                            <xs:element name="StPflichtArbLohnMKalJahr" type="FieldCType"/>
+                            <xs:element name="VBez">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Beginn" type="FieldCType"/>
+                                        <xs:element name="BmgFreibetrag" type="FieldCType"/>
+                                        <xs:element name="Einmversbezug" type="FieldCType"/>
+                                        <xs:element name="Ende" type="FieldCType"/>
+                                        <xs:element name="Jahr" type="FieldCType"/>
+                                        <xs:element name="Wert" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Besteuerungsmerkmal">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="ELStAM">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="GueltigAb" type="FieldCType"/>
+                                        <xs:element name="Hinzurechnungsbetrag" type="FieldCType"/>
+                                        <xs:element name="Kirchensteuerabzug">
+                                            <xs:complexType>
+                                                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                                    <xs:element name="Ehegkonfession" type="FieldCType"/>
+                                                    <xs:element name="Konfession" type="FieldCType"/>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Steuerfreibetrag" type="FieldCType"/>
+                                        <xs:element name="Steuerklasse">
+                                            <xs:complexType>
+                                                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                                    <xs:element name="Faktor" type="FieldCType"/>
+                                                    <xs:element name="Klasse" type="FieldCType"/>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Dauer">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Anfang" type="FieldCType"/>
+                            <xs:element name="Ende" type="FieldCType"/>
+                            <xs:element name="Jahr" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Eingangsdatum" type="FieldCType"/>
+            </xs:choice>
+            <xs:attribute name="version" fixed="201901" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

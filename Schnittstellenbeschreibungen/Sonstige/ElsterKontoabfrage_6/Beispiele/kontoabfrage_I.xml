@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+	<TransferHeader version="11">
+		<Verfahren>ElsterKontoabfrage</Verfahren>
+		<DatenArt>Kontoabfrage</DatenArt>
+		<Vorgang>send-Auth</Vorgang>
+		<Testmerker>230000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>Softwaretester ERiC</DatenLieferant>
+		<Datei>
+			<Verschluesselung>CMSEncryptedData</Verschluesselung>
+			<Kompression>GZIP</Kompression>
+			<TransportSchluessel />
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="11">
+				<NutzdatenTicket>73fc25f75f63024cdcfdcbebae6bc7c1</NutzdatenTicket>
+				<Empfaenger id="F">9198</Empfaenger>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<kontoabfrage xmlns="http://finkonsens.de/elster/elsterkontoabfrage/kontoabfrage/v6" version="6">
+					<kontoabfrage-teil>
+						<kontoabfrage-input xmlns="http://www.elster.de/KontoAbfrage/I-Abfrage/06">
+							<kontoabfrage-art>I</kontoabfrage-art>
+							<steuernummer>2657086132381</steuernummer>
+							<steuerart>ESt</steuerart>
+							<wertstellungsdatum option="V">01011998</wertstellungsdatum>
+						</kontoabfrage-input>
+						<kontoabfrage-output>
+							<abfrage-tagesdatum>02.12.2004 13:12:17</abfrage-tagesdatum>
+							<abfrage-steuernummer>57 861 32381</abfrage-steuernummer>
+							<abfrage-steuerart>
+								<steuerart-klartext>ohne Bestimmung</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>30.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>4.187,37</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>30.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-4.187,37</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5.112,92</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-3.671,18</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-81,30</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.06.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-218,32</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.09.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-433,38</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum />
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-708,74</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>0,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1992</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1994</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1995</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.10.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-8,18</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Lohnsteuer 28.09.1998 057 035 53979</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.10.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,51</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zum Solidaritätszuschlag zur Lohnsteuer 28.09.1998 057 035 53979</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>05.11.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-1.978,70</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Erstattung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.12.1999</teilbetrag-faelligkeit>
+									<teilbetrag-wert>15.719,67</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>13.732,27</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Verspätungszuschläge zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.12.1999</teilbetrag-faelligkeit>
+									<teilbetrag-wert>424,37</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>424,37</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.12.1999</teilbetrag-faelligkeit>
+									<teilbetrag-wert>17.792,96</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>320,07</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 2.Vj.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>23.547,04</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>41.660,06</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Verspätungszuschläge zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>623,78</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>623,78</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.02.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>6.697,92</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.02.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.072,69</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.04.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9.102,02</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.04.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>51,13</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9.816,80</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>51,13</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>24.11.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9.152,12</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5.624,21</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.652,16</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-14,32</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 4.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-112,48</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 18.11.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-1.264,94</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-37,84</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 18.11.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-2.222,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-2.453,18</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>29.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>4.168,56</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>26.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>21,47</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 29.12.1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>135,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 29.12.1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>177,93</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 29.12.1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.833,67</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>320,07</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-320,07</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 1998</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>08.09.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9.802,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>6.796,60</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2.482,84</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-912,66</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 3.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-1.493,99</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Einkommensteuer 3.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-67,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.09.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-8,69</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 10.09.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>14,32</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>23.05.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9.700,23</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>23.05.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>12,27</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>6.872,27</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>108,91</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-108,91</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 2.Vj.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>01.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.700,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>01.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-3.700,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rückscheck</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-188,38</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Kraftfahrzeugsteuer 25.07.2002 057 XY-UJ 777/4</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-291,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Lohnsteuer Mai 2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-16,03</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Lohnsteuer Mai 2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-26,24</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Lohnsteuer Mai 2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-291,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Lohnsteuer Jun.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-16,03</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Lohnsteuer Jun.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-26,24</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Lohnsteuer Jun.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-170,56</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer Feb.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-71,61</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer Mär.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.04.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>10.383,83</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>108,91</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>10.274,92</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1,02</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-1,02</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.03.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2.453,18</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>72,09</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Zinsen zur Einkommensteuer 1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>4.187,37</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.671,18</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>08.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.700,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.04.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2.604,74</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>11.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5.000,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>12.000,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>13.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>8.000,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>142.008,13</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Säumniszuschläge zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>26.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>21,47</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>135,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>26.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-21,47</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 2.Vj.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-135,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 2.Vj.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>177,93</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-177,93</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 2.Vj.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>66,98</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>03.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>91,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>03.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,51</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>03.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,51</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 18.07.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>03.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>41,41</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>75,67</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>235,19</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>03.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,51</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 07.03.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>67,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 3.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>06.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>67,49</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>12.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>183,04</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>112,48</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.04.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>98,68</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1,02</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 2.Vj.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>102,26</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 10.06.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5,62</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 10.06.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>23.05.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>193,27</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>137,03</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>102,26</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>103,79</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-102,26</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.03.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>81,30</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>20,96</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 10.09.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>182,02</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>36,30</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-20,96</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.06.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-9,71</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 10.09.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-5,63</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 10.06.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>23.04.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>37,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>06.05.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>26,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>50,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.980,22</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Zinsen zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>05.11.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-68,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Erstattung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.12.1999</teilbetrag-faelligkeit>
+									<teilbetrag-wert>413,12</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>18.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>136,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>238,26</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-72,09</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-27,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer Mär.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>17.08.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>12.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>299,62</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>17.08.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>12.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>26,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>17.08.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>12.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-26,59</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Zinsen zum Solidaritätszuschlag zur Einkommensteuer 17.08.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>17.08.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>21.02.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>282,74</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>25.03.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>05.04.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>76,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>19.02.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>296,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.574,66</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Umsatzsteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1994</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1995</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>02.07.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-88,23</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Erstattung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>01.07.1999</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.257,98</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.128,30</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>13.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.335,92</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>28.10.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.168,25</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>13.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>420,79</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>08.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>345,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>7.568,57</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Verspätungszuschläge zur Umsatzsteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.02.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>40,90</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>17.06.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>33,23</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>74,13</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Umsatzsteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Jan.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>15.05.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>505,52</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Jan.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>15.05.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-505,52</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer 1.Vj.2002, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>15.05.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>505,52</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Umsatzsteuer Jan.2002, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.08.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-28,41</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Kraftfahrzeugsteuer 25.07.2002 057 XY-UJ 777/4</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>28.10.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>23,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>28.10.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-23,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Zinsen zur Umsatzsteuer 2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.11.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-260,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Erstattung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>4.995,04</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-1.669,96</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer Dez.2002 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-2.433,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer SVZ 2003 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-388,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Lohnsteuer Dez.2002 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-21,36</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Lohnsteuer Dez.2002 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-34,97</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Lohnsteuer Dez.2002 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-376,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Lohnsteuer Jan.2003 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-20,70</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Lohnsteuer Jan.2003 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-33,89</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Lohnsteuer Jan.2003 057 861 32390, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>Dez.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>07.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-16,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Umsatzsteuer 15.01.2003 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>217,10</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Säumniszuschläge zur Umsatzsteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>28.10.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>11,50</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>11,50</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Zinsen zur Umsatzsteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>15.09.1999</teilbetrag-faelligkeit>
+									<teilbetrag-wert>18,41</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>01.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>49,60</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>28.10.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>23,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Umsatzsteuer 3.Vj.2002</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>91,01</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>05.11.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-140,46</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Erstattung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>18.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.179,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>26.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>980,66</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.310,67</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.02.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>931,57</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.02.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,52</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>24.11.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>91,52</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.264,94</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-137,23</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>29.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>229,06</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>11,76</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 29.12.1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9,71</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 29.12.1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>207,58</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>912,66</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 3.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>912,66</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-59,40</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer Mär.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>12,27</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer 18.11.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.04.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>558,33</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>570,60</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>137,23</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Solidaritätszuschlag zur Einkommensteuer 1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>433,38</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.04.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>348,19</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>9.765,22</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>11,76</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-11,76</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 2.Vj.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9,71</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-9,71</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 2.Vj.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9,20</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>03.05.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2,05</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>4,09</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>12,78</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>8,69</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 3.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>06.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>8,69</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>25,56</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>12,28</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-12,27</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Solidaritätszuschlag zur Einkommensteuer 1.Vj.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>31.12.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-0,01</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Rundungsdifferenz Währungsumstellung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.04.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>10,23</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>17,38</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5,62</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5,63</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-5,62</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Säumniszuschläge zur Einkommensteuer 10.03.2001, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>5,62</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 10.09.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9,71</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Säumniszuschläge zur Einkommensteuer 10.09.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>06.05.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>122,63</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Zinsen zum Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>17.08.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>12.12.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>26,59</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Zinsen zur Einkommensteuer 17.08.2000</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>21.02.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.03.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>17,38</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>19.02.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>23,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>66,97</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>röm. kath. Kirchensteuer zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1996</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>05.11.1998</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-178,79</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Erstattung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1997</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>18.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.414,79</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>26.01.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.601,37</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1998</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>16.08.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2.148,96</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>22.02.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.523,14</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.01.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2.222,59</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 4.Vj.1999, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1999</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-225,39</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach röm. kath. Kirchensteuer zur Einkommensteuer 3.Vj.2001</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>29.03.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>374,78</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>14.07.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>374,78</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Einzahlung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>19.10.2000</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.493,99</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von Einkommensteuer 3.Vj.2000, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.06.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.493,99</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2000</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>-98,21</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung nach Umsatzsteuer Mär.2002 057 861 32390</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>20.04.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>934,13</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>27.07.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>934,13</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.10.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>225,39</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von röm. kath. Kirchensteuer zur Einkommensteuer 1999</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.11.2001</teilbetrag-faelligkeit>
+									<teilbetrag-wert>708,74</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Umbuchung von ohne Bestimmung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2001</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>09.04.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>568,56</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Scheckeinzahlung, ohne Schonfrist</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>15.516,95</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-gesamtsumme>235.437,57</abfrage-gesamtsumme>
+						</kontoabfrage-output>
+					</kontoabfrage-teil>
+				</kontoabfrage>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+	<TransferHeader version="11">
+		<Verfahren>ElsterKontoabfrage</Verfahren>
+		<DatenArt>Kontoabfrage</DatenArt>
+		<Vorgang>send-Auth</Vorgang>
+		<Testmerker>230000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>Softwaretester ERiC</DatenLieferant>
+		<Datei>
+			<Verschluesselung>CMSEncryptedData</Verschluesselung>
+			<Kompression>GZIP</Kompression>
+			<TransportSchluessel />
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="11">
+				<NutzdatenTicket>73fc25f75f63024cdcfdcbebae6bc7c1</NutzdatenTicket>
+				<Empfaenger id="F">9198</Empfaenger>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<kontoabfrage xmlns="http://finkonsens.de/elster/elsterkontoabfrage/kontoabfrage/v6" version="6">
+					<kontoabfrage-teil>
+						<kontoabfrage-input xmlns="http://www.elster.de/KontoAbfrage/ZS-Abfrage/06">
+							<kontoabfrage-art>ZS</kontoabfrage-art>
+							<steuernummer>2657086132381</steuernummer>
+							<steuerart>ESt</steuerart>
+							<zeitraum>2002</zeitraum>
+						</kontoabfrage-input>
+						<kontoabfrage-output>
+							<abfrage-tagesdatum>02.12.2004 13:26:14</abfrage-tagesdatum>
+							<abfrage-steuernummer>57 861 32381</abfrage-steuernummer>
+							<abfrage-steuerart>
+								<steuerart-klartext>Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>9.363,80</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.06.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>38.728,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>28.782,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>28.782,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Zinsen zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>25.03.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>04.04.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>76,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>76,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>514,87</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.06.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>2.130,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.583,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.583,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>evangelische Kirchensteuer zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.06.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.742,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.295,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.295,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>röm. kath. Kirchensteuer zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>842,61</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>2.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.06.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>3.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.09.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>0,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.742,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>überholt, Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.12.2002</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.295,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Festsetzung</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.295,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-gesamtsumme>33.031,00</abfrage-gesamtsumme>
+						</kontoabfrage-output>
+					</kontoabfrage-teil>
+				</kontoabfrage>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

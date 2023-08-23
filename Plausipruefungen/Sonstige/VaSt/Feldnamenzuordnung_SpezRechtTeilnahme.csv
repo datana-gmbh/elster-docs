@@ -1,0 +1,4 @@
+"XPATH";"zugehoeriger_Feldname"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtTeilnahme[1]/Recht[1]";"Recht"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtTeilnahme[1]/DateninhaberOrdnungsbegriff[1]";"DateninhaberOrdnungsbegriff"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtTeilnahme[1]/DatenabruferMail[1]";"DatenabruferMail"

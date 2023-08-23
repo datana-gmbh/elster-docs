@@ -1,0 +1,8 @@
+<map id="platform.h" name="platform.h">
+<area shape="rect" id="node1" title="Konstanten für verschiedene Betriebssysteme." alt="" coords="157,5,235,32"/>
+<area shape="rect" id="node2" href="$eric__types_8h.html" title="Definition von Datenstrukturen und Datentypen." alt="" coords="24,80,117,107"/>
+<area shape="rect" id="node3" href="$ericapi_8h.html" title="Deklaration der ERiC API&#45;Funktionen für die Singlethreading&#45;API." alt="" coords="103,155,174,181"/>
+<area shape="rect" id="node4" href="$ericmtapi_8h.html" title="Deklaration der ERiC API&#45;Funktionen für die Multithreading&#45;API." alt="" coords="209,155,295,181"/>
+<area shape="rect" id="node5" href="$ericapi_export_8h.html" title="Attribute für dynamische Bibliotheken." alt="" coords="141,80,251,107"/>
+<area shape="rect" id="node6" href="$ericdef_8h.html" title="Konstanten und Definitionen für Übergabeparameter." alt="" coords="275,80,346,107"/>
+</map>

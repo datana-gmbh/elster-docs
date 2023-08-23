@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+	<TransferHeader version="11">
+		<Verfahren>ElsterLavendel</Verfahren>
+		<DatenArt>ELeVGetrenntlebend</DatenArt>
+		<Vorgang>send-Auth</Vorgang>
+		<Testmerker>700000004</Testmerker>
+		<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>Testpoint ELSTER;Mustergasse;42;a;im Hinterhof;12345;Musterstadt;Deutschland;089/1234567890;tester@tpe.qs.de</DatenLieferant>
+		<Datei>
+			<Verschluesselung>CMSEncryptedData</Verschluesselung>
+			<Kompression>GZIP</Kompression>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="11">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="F">1096</Empfaenger>
+				<Hersteller>
+					<ProduktName>Testpoint ELSTER</ProduktName>
+					<ProduktVersion>42</ProduktVersion>
+				</Hersteller>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<ELeVGetrenntlebend xmlns="http://finkonsens.de/elster/elsterlavendel/elevgetrenntlebend/v2" version="2">
+					<Getrenntlebend>
+						<OrdNrArt>S</OrdNrArt>
+						<Stnr>1096081508187</Stnr>
+						<Antragsteller>
+							<PersIdNr>04452397687</PersIdNr>
+							<AnredeId>1</AnredeId>
+							<Titel>Dr.</Titel>
+							<Vorname>Josef</Vorname>
+							<Name>Schneider</Name>
+							<Zusatz>Prof.</Zusatz>
+							<GebDatum>09.04.1968</GebDatum>
+							<Berufsbez>Krankenpfleger</Berufsbez>
+							<Adrkette>
+								<StrAdr>
+									<Str>Beispielweg</Str>
+									<HausNr>1</HausNr>
+									<HausNrZu>a</HausNrZu>
+									<AdressErg>im OG</AdressErg>
+									<Plz>12345</Plz>
+									<Ort>Testhausen</Ort>
+								</StrAdr>
+							</Adrkette>
+							<Telefon>
+								<IntVorw>0043</IntVorw>
+								<NatVorwahl>12345</NatVorwahl>
+								<RufNr>678910</RufNr>
+							</Telefon>
+						</Antragsteller>
+						<Ehegatte>
+							<PersIdNr>04452317681</PersIdNr>
+							<AnredeId>2</AnredeId>
+							<Vorname>Anna</Vorname>
+							<Vorsatz>von</Vorsatz>
+							<Name>Schneider</Name>
+							<GebDatum>05.02.1981</GebDatum>
+							<GebName>Musterfrau</GebName>
+							<Berufsbez>Sozialarbeiterin</Berufsbez>
+							<Adrkette>
+								<PostfAdr>
+									<Postfach>1234</Postfach>
+									<Plz>56789</Plz>
+									<Ort>Beispielshausen</Ort>
+								</PostfAdr>
+							</Adrkette>
+						</Ehegatte>
+						<Uebermittler>
+							<Bezeichnung>Berater</Bezeichnung>
+							<Vorname>Klaus</Vorname>
+							<Name>Baier</Name>
+							<Adrkette>
+								<GKAdrInl>
+									<Plz>98765</Plz>
+									<Ort>Musterstadt</Ort>
+								</GKAdrInl>
+							</Adrkette>
+							<Kommunikation>
+								<Telefon>
+									<IntVorw>0043</IntVorw>
+									<NatVorw>12345</NatVorw>
+									<RufNr>6789-10</RufNr>
+								</Telefon>
+								<Email>
+									<Adresse>tester@test.de</Adresse>
+								</Email>
+							</Kommunikation>
+						</Uebermittler>
+						<Erklaerung>
+							<DatumTrennung>28.10.2019</DatumTrennung>
+						</Erklaerung>
+					</Getrenntlebend>
+				</ELeVGetrenntlebend>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

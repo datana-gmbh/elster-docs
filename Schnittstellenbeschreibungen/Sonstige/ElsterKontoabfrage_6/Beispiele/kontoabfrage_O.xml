@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+	<TransferHeader version="11">
+		<Verfahren>ElsterKontoabfrage</Verfahren>
+		<DatenArt>Kontoabfrage</DatenArt>
+		<Vorgang>send-Auth</Vorgang>
+		<Testmerker>230000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>Softwaretester ERiC</DatenLieferant>
+		<Datei>
+			<Verschluesselung>CMSEncryptedData</Verschluesselung>
+			<Kompression>GZIP</Kompression>
+			<TransportSchluessel />
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="11">
+				<NutzdatenTicket>73fc25f75f63024cdcfdcbebae6bc7c1</NutzdatenTicket>
+				<Empfaenger id="F">9198</Empfaenger>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<kontoabfrage xmlns="http://finkonsens.de/elster/elsterkontoabfrage/kontoabfrage/v6" version="6">
+					<kontoabfrage-teil>
+						<kontoabfrage-input xmlns="http://www.elster.de/KontoAbfrage/O-Abfrage/06">
+							<kontoabfrage-art>O</kontoabfrage-art>
+							<steuernummer>2657086132381</steuernummer>
+						</kontoabfrage-input>
+						<kontoabfrage-output>
+							<abfrage-tagesdatum>02.12.2004 13:24:15</abfrage-tagesdatum>
+							<abfrage-steuernummer>57 861 32381</abfrage-steuernummer>
+							<abfrage-steuerart>
+								<steuerart-klartext>Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>3.782,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Zahlungshinweis erstellt</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>7.195,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>10.977,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Zinsen zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>26.03.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>37,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>37,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Säumniszuschläge zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>80,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.501,50</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>712,50</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>2.294,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Umsatzsteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.02.2003</teilbetrag-faelligkeit>
+									<teilbetrag-erlaeuterung>Voranmeldung fehlt</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.583,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Zahlungshinweis erstellt</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>395,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.978,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Zinsen zum Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>26.03.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>15,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>15,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>Säumniszuschläge zum Solidaritätszuschlag zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>73,50</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>294,50</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>368,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>evangelische Kirchensteuer zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.295,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Zahlungshinweis erstellt</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>323,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.618,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-steuerart>
+								<steuerart-klartext>röm. kath. Kirchensteuer zur Einkommensteuer</steuerart-klartext>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>4.Vj.2002</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>30.05.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>1.295,00</teilbetrag-wert>
+									<teilbetrag-erlaeuterung>Zahlungshinweis erstellt</teilbetrag-erlaeuterung>
+								</steuerart-teilbetrag>
+								<steuerart-teilbetrag>
+									<teilbetrag-zeitraum>1.Vj.2003</teilbetrag-zeitraum>
+									<teilbetrag-faelligkeit>10.03.2003</teilbetrag-faelligkeit>
+									<teilbetrag-wert>323,00</teilbetrag-wert>
+								</steuerart-teilbetrag>
+								<steuerart-gesamtbetrag>1.618,00</steuerart-gesamtbetrag>
+							</abfrage-steuerart>
+							<abfrage-gesamtsumme>18.905,00</abfrage-gesamtsumme>
+						</kontoabfrage-output>
+					</kontoabfrage-teil>
+				</kontoabfrage>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

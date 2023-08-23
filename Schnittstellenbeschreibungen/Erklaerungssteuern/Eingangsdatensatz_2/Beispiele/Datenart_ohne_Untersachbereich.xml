@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+    <TransferHeader version="11">
+        <Verfahren>ElsterErklaerung</Verfahren>
+        <!-- datenart_ohne_Untersachbereich: 
+        Naehere Informationen zur Datenart und Schnittstelle sind unter dem entsprechenden 
+        Kapitel der o.g. Datenarten im Entwicklerhandbuch zu finden. -->
+        <DatenArt>KSt</DatenArt>
+        <Vorgang>send-Auth</Vorgang>
+        <Testmerker>700000004</Testmerker>
+        <HerstellerID>74931</HerstellerID>
+        <DatenLieferant>Beispiel-Software-Hersteller</DatenLieferant>
+        <Datei>
+            <Verschluesselung>CMSEncryptedData</Verschluesselung>
+            <Kompression>GZIP</Kompression>
+            <TransportSchluessel />
+        </Datei>
+    </TransferHeader>
+    <DatenTeil>
+        <Nutzdatenblock>
+            <NutzdatenHeader version="11">
+                <NutzdatenTicket>xadfjasldkfuweor456asvs</NutzdatenTicket>
+                <Empfaenger id="F">2653</Empfaenger>
+            </NutzdatenHeader>
+            <Nutzdaten>
+                <Jahressteuererklaerung version="2">
+                    <Vorsatz unterfallart="30" ordNrArt="S" vorgang="01">
+                        <StNr>2653081508158</StNr>
+                        <Zeitraum>2012</Zeitraum>
+                        <Erstelldatum>20130502</Erstelldatum>
+                        <Erstellzeit>080000</Erstellzeit>
+                        <AbsName>Max Mustermann</AbsName>
+                        <AbsStr>Musterstr. 1</AbsStr>
+                        <AbsPlz>08150</AbsPlz>
+                        <AbsOrt>Musterstadt</AbsOrt>
+                        <Copyright>Beispiel-Steuer-Software</Copyright>
+                        <Rueckuebermittlung bescheid="nein" />
+                    </Vorsatz>
+                    <!--  ankreuzfelder: elektronisch signiert  -->
+                    <Feld index="01" lfdNr="00001" nr="8000013" wert="X" />
+                    <Feld index="01" lfdNr="00001" nr="8000012" wert="X" />
+                    <Feld index="01" lfdNr="00001" nr="8001707" wert="X" />
+                    <!--  eigentl. testdaten  -->
+                    <Feld index="01" lfdNr="00001" nr="8000101" wert="3. Standard_Test GmbH" />
+                    <Feld index="01" lfdNr="00001" nr="8000301" wert="Testallee 23" />
+                    <Feld index="01" lfdNr="00001" nr="8000401" wert="40000" />
+                    <Feld index="01" lfdNr="00001" nr="8000402" wert="Düsseldorf" />
+                    <Feld index="01" lfdNr="00001" nr="8000501" wert="Düsseldorf" />
+                    <Feld index="01" lfdNr="00001" nr="8000601" wert="Düsseldorf" />
+                    <Feld index="01" lfdNr="00001" nr="8000701" wert="Volker Vertreter, Paragraph 2a, 28217 Bremen" />
+                    <Feld index="01" lfdNr="00001" nr="8001002" wert="X" />
+                    <Feld index="01" lfdNr="00001" nr="8005401" wert="0" />
+                    <Feld index="01" lfdNr="00001" nr="8006901" wert="0" />
+                    <Feld index="01" lfdNr="00001" nr="8007301" wert="0" />
+                    <Feld index="01" lfdNr="00001" nr="8007501" wert="0" />
+                    <Feld index="01" lfdNr="00001" nr="8002001" wert="0" />
+                    <!-- Anlage WA Pflichtfelder -->
+                    <Feld index="01" lfdNr="00001" nr="8122112" wert="X" />
+                    <Feld index="01" lfdNr="00001" nr="8122101" wert="Anteilseigner: Vor- und Nachname" />
+                    <Feld index="01" lfdNr="00001" nr="8122102" wert="Anteilseigner: Straße und Hausnummer" />
+                    <Feld index="01" lfdNr="00001" nr="8122103" wert="Anteilseigner: Plz und Wohnort" />
+                    <Feld index="01" lfdNr="00001" nr="8122104" wert="1,00" />
+                    <Feld index="01" lfdNr="00001" nr="8122105" wert="100" />
+                    <Feld index="01" lfdNr="00001" nr="8122106" wert="01.01.2111" />
+                    <Feld index="01" lfdNr="00001" nr="8123002" wert="X" />
+                </Jahressteuererklaerung>
+            </Nutzdaten>
+        </Nutzdatenblock>
+    </DatenTeil>
+</Elster>

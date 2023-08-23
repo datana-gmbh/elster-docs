@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+    <TransferHeader version="11">
+        <Verfahren>ElsterNachricht</Verfahren>
+        <DatenArt>Aufzeichnung146a</DatenArt>
+        <Vorgang>send-Auth</Vorgang>
+        <Testmerker>700000004</Testmerker>
+        <SigUser>
+            <Sig/>
+        </SigUser>
+        <Empfaenger id="L">
+            <Ziel>BY</Ziel>
+        </Empfaenger>
+        <HerstellerID>12345</HerstellerID>
+        <DatenLieferant>ERiC Beispiel Aufzeichung146a</DatenLieferant>
+        <Datei>
+            <Verschluesselung>CMSEncryptedData</Verschluesselung>
+            <Kompression>GZIP</Kompression>
+        </Datei>
+    </TransferHeader>
+    <DatenTeil>
+        <Nutzdatenblock>
+            <NutzdatenHeader version="11">
+                <NutzdatenTicket>1</NutzdatenTicket>
+                <Empfaenger id="F">9198</Empfaenger>
+            </NutzdatenHeader>
+            <Nutzdaten>
+                <Aufzeichnung146a xmlns="http://finkonsens.de/elster/elsternachricht/aufzeichnung146a/v1" version="1">
+                    <Aufzeichnung146a>
+                        <StNr>4088020854099</StNr>
+                        <AllgAngaben>
+                            <NatuerlichePerson>
+                                <IdNr>05428316990</IdNr>
+                                <Anrede>2</Anrede>
+                                <Name>Mustermann</Name>
+                                <Vorname>Maximiliane</Vorname>
+                                <Titel>Prof. Dr.</Titel>
+                                <Geburtsdatum>29.03.2003</Geburtsdatum>
+                            </NatuerlichePerson>
+                            <Adresse>
+                                <AdrInl>
+                                    <Strasse>Musterstraße</Strasse>
+                                    <Hausnummer>641</Hausnummer>
+                                    <Hausnummernzusatz>E</Hausnummernzusatz>
+                                    <Anschriftenzusatz>vel</Anschriftenzusatz>
+                                    <Postleitzahl>02378</Postleitzahl>
+                                    <Ort>Musteror.</Ort>
+                                </AdrInl>
+                            </Adresse>
+                        </AllgAngaben>
+                        <AngabenDatenuebermittler>
+                            <NatuerlichePerson>
+                                <Anrede>2</Anrede>
+                                <Name>Musterfrau</Name>
+                                <Vorname>Maximiliane</Vorname>
+                                <Titel>Dr.</Titel>
+                            </NatuerlichePerson>
+                            <Adresse>
+                                <AdrInl>
+                                    <Strasse>dolorum</Strasse>
+                                    <Hausnummer>357</Hausnummer>
+                                    <Hausnummernzusatz>distinctio</Hausnummernzusatz>
+                                    <Postleitzahl>01821</Postleitzahl>
+                                    <Ort>autem</Ort>
+                                </AdrInl>
+                            </Adresse>
+                        </AngabenDatenuebermittler>
+                        <AngabenZuBetriebsstaette>
+                            <AnzahlAufzeichnungssysteme>1</AnzahlAufzeichnungssysteme>
+                            <Adresse>
+                                <Strasse>Ratione</Strasse>
+                                <Hausnummer>2890</Hausnummer>
+                                <Postleitzahl>85101</Postleitzahl>
+                                <Ort>culpaducimus</Ort>
+                            </Adresse>
+                        </AngabenZuBetriebsstaette>
+                        <AngabenAufzeichnungssystem>
+                            <Art>6</Art>
+                            <ArtSonstiges>Autem unde non vero.</ArtSonstiges>
+                            <Software>Ab earum similique expedita aut sunt cupiditate.</Software>
+                            <SeriennummerAS>quasi</SeriennummerAS>
+                            <Hersteller>dolorem</Hersteller>
+                            <Modell>Ipsum tenetur facilis.</Modell>
+                            <SeriennummerTSE>Laboriosam facere nostrum minima.</SeriennummerTSE>
+                            <InbetriebnahmeTSE>01.01.2000</InbetriebnahmeTSE>
+                            <AblaufdatumTSE>01.01.2099</AblaufdatumTSE>
+                            <BSIID>4480-4635</BSIID>
+                            <AnschaffungAS>01.01.2000</AnschaffungAS>
+                            <InbetriebnahmeAS>01.01.2099</InbetriebnahmeAS>
+                        </AngabenAufzeichnungssystem>
+                    </Aufzeichnung146a>
+                </Aufzeichnung146a>
+            </Nutzdaten>
+        </Nutzdatenblock>
+    </DatenTeil>
+</Elster>

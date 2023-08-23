@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema automatisch generiert von ElsterRules 47.0.0 -->
+<!-- Schema entsprechend eXML-Spezifikation Version 2.0 -->
+<!-- KStAntragOptionPersG - 1 - 9.0 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://finkonsens.de/elster/elsternachricht/kstantragoptionpersg/v1" targetNamespace="http://finkonsens.de/elster/elsternachricht/kstantragoptionpersg/v1" xmlns:exml="http://finkonsens.de/elster/elsternachricht/kstantragoptionpersg/v1">
+    <!-- XML-Typdefinitionen fuer eXML -->
+    <!-- Definition der datenartspezifischen eXML-Struktur -->
+    <xs:simpleType name="GanzzahlNichtNegOhneFuehrNullBaseSType">
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:pattern value="[1-9].*|0">
+                <xs:annotation>
+                    <xs:documentation>Kein Vorzeichen, Einträge der Form '0' oder erste Ziffer ungleich '0'</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StringBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[&#x20;-&#x7e;&#xa1;-&#xa3;&#xa5;-&#xa5;&#xa7;-&#xa7;&#xaa;-&#xac;&#xae;-&#xb3;&#xb5;-&#xb5;&#xb9;-&#xbb;&#xbf;-&#xff;&#x152;-&#x153;&#x160;-&#x161;&#x178;-&#x178;&#x17d;-&#x17e;&#x20ac;-&#x20ac;]+">
+                <xs:annotation>
+                    <xs:documentation>Zeichensatz Standard_E_V2, Zeilenumbrüche und Leerangaben unterbinden</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="BundesfinanzamtsnummerBaseSType">
+        <xs:annotation>
+            <xs:documentation>Bundesfinanzamtsnummer</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DatumTTpMMpJJJJBekanntBaseSType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0[1-9]|[1-2][0-9]|3[0-1])\.(10|11|12|01|02|03|04|05|06|07|08|09)\.([0-9][0-9][0-9][1-9]|[0-9][0-9][1-9][0-9]|[0-9][1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])">
+                <xs:annotation>
+                    <xs:documentation>Art der Teilbekanntheit: BEKANNT</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Enum_KStOpt_K_AuslRFVgbl_SType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>einer Kommanditgesellschaft im Sinne der §§ 161 ff HGB</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>einer offenen Handelsgesellschaft im Sinne der §§ 105 ff HGB</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="3">
+                <xs:annotation>
+                    <xs:documentation>einer Partnerschaftsgesellschaft im Sinne des Partnerschaftsgesellschaftsgesetzes</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="4">
+                <xs:annotation>
+                    <xs:documentation>einer anderen Gesellschaftsform des deutschen Rechts</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GanzzahlNichtNegOhneFuehrNullSType">
+        <xs:restriction base="GanzzahlNichtNegOhneFuehrNullBaseSType"/>
+    </xs:simpleType>
+    <xs:simpleType name="Ja1BaseSType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="JaNein12BaseSType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1">
+                <xs:annotation>
+                    <xs:documentation>Ja</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+                <xs:annotation>
+                    <xs:documentation>Nein</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType">
+        <xs:restriction base="StringBaseSType">
+            <xs:annotation>
+                <xs:documentation>Afghanistan,Ägypten,Albanien,Algerien,Andorra,Angola,Antigua und Barbuda,Äquatorialguinea,Argentinien,Armenien,Aserbaidschan,Äthiopien,Australien,Bahamas,Bahrain,Bangladesch,Barbados,Belgien,Belize,Benin,Bhutan,Bolivien,Bosnien und Herzegowina,Botsuana,Brasilien,Brunei Darussalam,Bulgarien,Burkina Faso,Burundi,Chile,China,Cookinseln,Costa Rica,Cote d&apos;Ivoire,Dänemark,Dominica,Dominikanische Republik,Dschibuti,Ecuador,El Salvador,Eritrea,Estland,Eswatini,Fidschi,Finnland,Frankreich,Gabun,Gambia,Georgien,Ghana,Grenada,Griechenland,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Indien,Indonesien,Irak,Iran,Irland,Island,Israel,Italien,Jamaika,Japan,Jemen,Jordanien,Kambodscha,Kamerun,Kanada,Kap Verde,Kasachstan,Katar,Kenia,Kirgisistan,Kiribati,Kolumbien,Komoren,Kongo,Kongo, Demokratische Republik,Korea, Demokratische Volksrepublik,Korea, Republik,Kosovo,Kroatien,Kuba,Kuwait,Laos,Lesotho,Lettland,Libanon,Liberia,Libyen,Liechtenstein,Litauen,Luxemburg,Madagaskar,Malawi,Malaysia,Malediven,Mali,Malta,Marokko,Marshallinseln,Mauretanien,Mauritius,Mexiko,Föderierte Staaten von Mikronesien,Moldau,Monaco,Mongolei,Montenegro,Mosambik,Myanmar,Namibia,Nauru,Nepal,Neuseeland,Nicaragua,Niederlande,Niger,Nigeria,Niue,Nordmazedonien,Norwegen,Oman,Österreich,Pakistan,Palau,Panama,Papua-Neuguinea,Paraguay,Peru,Philippinen,Polen,Portugal,Ruanda,Rumänien,Russische Föderation,Salomonen,Sambia,Samoa,San Marino,Sao Tome und Principe,Saudi-Arabien,Schweden,Schweiz,Senegal,Serbien,Seychellen,Sierra Leone,Simbabwe,Singapur,Slowakei,Slowenien,Somalia,Spanien,Sri Lanka,St. Kitts und Nevis,St. Lucia,St. Vincent und die Grenadinen,Südafrika,Sudan,Südsudan,Surinam,Syrien,Tadschikistan,Tansania,Thailand,Timor-Leste,Togo,Tonga,Trinidad und Tobago,Tschad,Tschechische Republik,Tunesien,Türkei,Turkmenistan,Tuvalu,Uganda,Ukraine,Ungarn,Uruguay,USA,Usbekistan,Vanuatu,Vatikanstadt,Venezuela,Vereinigte Arabische Emirate,Vereinigtes Königreich,Vietnam,Weißrussland,Zentralafrikanische Republik,Zypern</xs:documentation>
+            </xs:annotation>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SteuernummerBaseSType">
+        <xs:annotation>
+            <xs:documentation>Steuernummer</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{4})0[0-9]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL1_Muster83686_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1"/>
+            <xs:pattern value="S|O"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL1_MaxL99999_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String_MinL5_MaxL5_Muster91555_SType">
+        <xs:restriction base="StringBaseSType">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="5"/>
+            <xs:pattern value="\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="KStAntragOptionPersG" type="KStAntragOptionPersG_CType"/>
+    <xs:complexType name="KStAntragOptionPersG_CType">
+        <xs:sequence>
+            <xs:element name="KStOpt" type="KStOpt_370259070_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="version" fixed="1" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="KStOpt_370259070_CType">
+        <xs:sequence>
+            <xs:element name="Allgemein" type="Allgemein_699372025_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="K" type="K_699372025_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PG" type="PG_699372025_CType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Unterschrift" type="Unterschrift_699372025_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Allgemein_699372025_CType">
+        <xs:sequence>
+            <xs:element name="Bundesfinanzamtsnummer" type="BundesfinanzamtsnummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bundesfinanzamtsnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OrdNrArt" type="String_MinL1_MaxL1_Muster83686_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ordnungsnummernart</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Steuernummer" type="SteuernummerBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Steuernummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Bezeichnung" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bezeichnung der Personenhandels- oder Partnerschaftsgesellschaft</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="WJ_Beginn" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Beginn des ersten Wirtschaftsjahres, für das der Antrag gestellt wird</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="WJ_Ende" type="DatumTTpMMpJJJJBekanntBaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ende des ersten Wirtschaftsjahres, für das der Antrag gestellt wird</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Nicht_Gefuehrt" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Für die in Zeile $Bezeichnung.Vordruckzeile$ bezeichnete Gesellschaft wird bisher keine gesonderte und einheitliche Feststellung der Einkünfte vorgenommen.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ausschl_AbzugSt" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die in Zeile $Bezeichnung.Vordruckzeile$ bezeichnete Gesellschaft erzielt ausschließlich Einkünfte, die dem Steuerabzug unterliegen und für die infolgedessen die Körperschaft- und Einkommensteuer abgegolten ist.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Sitz" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort des Sitzes nach § 11 AO</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Sitz_Staat" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Staat (nur angeben, wenn im Ausland)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Anschrift" type="Anschrift_m37012749_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Anschrift_m37012749_CType">
+        <xs:sequence>
+            <xs:element name="Strasse" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Hausnummer" type="GanzzahlNichtNegOhneFuehrNullSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Hausnummerzusatz" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Hausnummerzusatz</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdressE" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Adressergänzung</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PLZ" type="String_MinL5_MaxL5_Muster91555_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ort" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ausland_PLZ" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl und Ort (Ausland)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ausland_Staat" type="NAEnum_LAND_OF_WORLD_2020_ohne_DE_1_BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Staat (nur angeben, wenn im Ausland)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="K_699372025_CType">
+        <xs:sequence>
+            <xs:element name="Option" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Es wird unwiderruflich beantragt, die in Zeile $Bezeichnung.Vordruckzeile$ bezeichnete Gesellschaft ab dem in Zeile $WJ_Beginn.Vordruckzeile$ benannten Zeitpunkt wie eine Kapitalgesellschaft und ihre Gesellschafter wie nicht persönlich haftende Gesellschafter einer Kapitalgesellschaft zu behandeln.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="P217UmwG" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Der Antragstellung haben alle Gesellschafter zugestimmt. Soweit im Gesellschaftsvertrag eine Mehrheitsentscheidung vorgesehen ist, liegt die Zustimmung der erforderlichen Mehrheit (mindestens drei Viertel der abgegebenen Stimmen) der Gesellschafter vor.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="UBSTPFL" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Wenn sich die Geschäftsleitung der Gesellschaft im Ausland befindet:&#10;Die Gesellschaft unterliegt in dem Staat, in dem sich die Geschäftsleitung befindet, einer der deutschen unbeschränkten Körperschaftsteuerpflicht vergleichbaren Steuerpflicht.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AuslRFVgbl" type="Enum_KStOpt_K_AuslRFVgbl_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Bei ausländischen Rechtsformen:&#10;Die Rechtsform der Gesellschaft ist vergleichbar mit</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IFonds" type="JaNein12BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Die Gesellschaft ist ein Investmentfonds im Sinne des Investmentsteuergesetzes.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PG_699372025_CType">
+        <xs:sequence>
+            <xs:element name="Rueckoption" type="Ja1BaseSType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Es wird beantragt, die in Zeile $Bezeichnung.Vordruckzeile$ bezeichnete Gesellschaft ab dem in Zeile $WJ_Beginn.Vordruckzeile$ bezeichneten Zeitpunkt nicht mehr wie eine Kapitalgesellschaft und ihre Gesellschafter nicht mehr wie die nicht persönlich haftenden Gesellschafter einer Kapitalgesellschaft zu behandeln.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Unterschrift_699372025_CType">
+        <xs:sequence>
+            <xs:element name="Anfertigung" type="Anfertigung_m1259795732_CType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Anfertigung_m1259795732_CType">
+        <xs:sequence>
+            <xs:element name="Name" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Vorname" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Vorname</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Strasse_Haus" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Straße, Hausnummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PLZ_Ort" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Postleitzahl, Ort</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Telefon" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Telefon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Zusatz" type="String_MinL1_MaxL99999_SType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>zusätzliche Angaben</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elster xmlns="http://www.elster.de/elsterxml/schema/v11">
+    <TransferHeader version="11">
+        <Verfahren>ElsterNachricht</Verfahren>
+        <DatenArt>ForschungZulAntrag</DatenArt>
+        <Vorgang>send-Auth</Vorgang>
+        <Testmerker>700000004</Testmerker>
+        <HerstellerID>70203</HerstellerID>
+        <DatenLieferant>Test ERiC-Entwicklung</DatenLieferant>
+        <Datei>
+            <Verschluesselung>CMSEncryptedData</Verschluesselung>
+            <Kompression>GZIP</Kompression>
+        </Datei>
+    </TransferHeader>
+
+    <DatenTeil>
+        <Nutzdatenblock>
+            <NutzdatenHeader version="11">
+                <NutzdatenTicket>1</NutzdatenTicket>
+                <Empfaenger id="F">9181</Empfaenger>
+                <Hersteller>
+                    <ProduktName>ERIC, BayLfSt</ProduktName>
+                    <ProduktVersion>33.x</ProduktVersion>
+                </Hersteller>
+                <DatenLieferant>ERiC-Entwicklung</DatenLieferant>
+            </NutzdatenHeader>
+
+            <Nutzdaten>
+                <ForschungZulAntrag xmlns="http://finkonsens.de/elster/elsternachricht/forschungzulantrag/v6" version="6">
+                    <ForschungZulAntrag>
+                        <Wirtschaftsjahr>12.01.2021-11.01.2022</Wirtschaftsjahr>
+                        <StNr>9198011310010</StNr>
+                        <AllgAngaben>
+                            <Name>Ipsa totam exercitationem tempora facere et optio.</Name>
+                            <SitzGem>Magni est ullam omnis fuga voluptatem.</SitzGem>
+                            <Rechtsform>220</Rechtsform>
+                            <WirtZweig>29</WirtZweig>
+                            <Organschaft>0</Organschaft>
+                            <Anschrift>
+                                <AdrInl>
+                                    <Str>quibusdam</Str>
+                                    <HausNr>1</HausNr>
+                                    <Plz>02277</Plz>
+                                    <Ort>eligendi</Ort>
+                                </AdrInl>
+                            </Anschrift>
+                            <Vertreter>
+                                <Anrede>Frau</Anrede>
+                                <Name>odio</Name>
+                                <Vorname>reiciendis</Vorname>
+                            </Vertreter>
+                            <AngabenStBefreiung>
+                                <StBefreit>2</StBefreit>
+                            </AngabenStBefreiung>
+                            <AngabenVerbundUntern>
+                                <VerbundUntern>2</VerbundUntern>
+                            </AngabenVerbundUntern>
+                            <PersGAngaben>
+                                <AngBet>
+                                    <Nr>0</Nr>
+                                    <Name>Debitis molestias sit dolorem.</Name>
+                                    <Vorname>eligendi</Vorname>
+                                    <Str>Eaque ut in placeat molestias.</Str>
+                                    <HausNr>1</HausNr>
+                                    <Plz>Reprehender.</Plz>
+                                    <Ort>inventore</Ort>
+                                    <StNr>2497088204431</StNr>
+                                    <ArtBeteiligter>1</ArtBeteiligter>
+                                    <AngAuft>
+                                        <Kap>0.00</Kap>
+                                    </AngAuft>
+                                </AngBet>
+                            </PersGAngaben>
+                        </AllgAngaben>
+                        <WeitereVoraussetzung>
+                            <UnternInSchwierigkeit>1</UnternInSchwierigkeit>
+                            <RueckForderungBeihilfe>1</RueckForderungBeihilfe>
+                            <KMU>1</KMU>
+                        </WeitereVoraussetzung>
+                        <Erkl>
+                            <Bestaetigung>1</Bestaetigung>
+                            <UnterrichtungBest>1</UnterrichtungBest>
+                            <Mitwirkung>2</Mitwirkung>
+                            <Empfangsbevoll>2</Empfangsbevoll>
+                        </Erkl>
+                    </ForschungZulAntrag>
+                </ForschungZulAntrag>
+            </Nutzdaten>
+
+        </Nutzdatenblock>
+    </DatenTeil>
+
+</Elster>

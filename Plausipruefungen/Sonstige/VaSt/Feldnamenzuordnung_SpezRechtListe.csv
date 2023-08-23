@@ -1,0 +1,6 @@
+"XPATH";"zugehoeriger_Feldname"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtListe[1]/Suchkriterien[1]/Dateninhaber[1]/DateninhaberIdNr[%2]";"DateninhaberIdNr"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtListe[1]/Suchkriterien[1]/AntragsStatus[1]/AntragsStatus[%2]";"AntragsStatus"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtListe[1]/Suchkriterien[1]/AntragsDatum[1]/Von[1]";"Von"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtListe[1]/Suchkriterien[1]/AntragsDatum[1]/Bis[1]";"Bis"
+"/Elster[1]/DatenTeil[1]/Nutzdatenblock[*]/Nutzdaten[1]/SpezRechtListe[1]/Suchkriterien[1]/DateninhaberOrdnungsbegriff[1]";"DateninhaberOrdnungsbegriff"

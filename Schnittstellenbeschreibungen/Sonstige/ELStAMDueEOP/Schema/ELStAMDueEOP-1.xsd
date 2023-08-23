@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Schema automatisch generiert von ElsterRules 47.0.0 -->
+<!-- Schema entsprechend eXML-Spezifikation Version 1.8 -->
+<!-- ELStAMDueEOP - 1 - 6.0 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- XML-Typdefinitionen fuer eXML -->
+    <xs:simpleType name="ContentSType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FieldCType">
+        <xs:simpleContent>
+            <xs:extension base="ContentSType"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="ContentSTypeNoMaxLen">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FieldCTypeNoMaxLen">
+        <xs:simpleContent>
+            <xs:extension base="ContentSTypeNoMaxLen"/>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!-- Definition der datenartspezifischen eXML-Struktur -->
+    <xs:element name="ELStAMDueEOP">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Arbeitgeber">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Adresse">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Anschriftenzusatz" type="FieldCType"/>
+                                        <xs:element name="Hausnummer" type="FieldCType"/>
+                                        <xs:element name="Hausnummernzusatz" type="FieldCType"/>
+                                        <xs:element name="Land" type="FieldCType"/>
+                                        <xs:element name="Ort" type="FieldCType"/>
+                                        <xs:element name="Postleitzahl" type="FieldCType"/>
+                                        <xs:element name="Postleitzahl_Ausland" type="FieldCType"/>
+                                        <xs:element name="Strasse" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Emailadresse" type="FieldCType"/>
+                            <xs:element name="Finanzamt" type="FieldCType"/>
+                            <xs:element name="Postfachadresse">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Ort" type="FieldCType"/>
+                                        <xs:element name="Postfach" type="FieldCType"/>
+                                        <xs:element name="Postleitzahl" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Steuernummer" type="FieldCType"/>
+                            <xs:element name="Telefonnummer" type="FieldCType"/>
+                            <xs:element name="Unternehmen" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Datenuebermittler">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Abweichend_vom_Arbeitgeber" type="FieldCType"/>
+                            <xs:element name="Adresse">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Anschriftenzusatz" type="FieldCType"/>
+                                        <xs:element name="Hausnummer" type="FieldCType"/>
+                                        <xs:element name="Hausnummernzusatz" type="FieldCType"/>
+                                        <xs:element name="Land" type="FieldCType"/>
+                                        <xs:element name="Ort" type="FieldCType"/>
+                                        <xs:element name="Postleitzahl" type="FieldCType"/>
+                                        <xs:element name="Postleitzahl_Ausland" type="FieldCType"/>
+                                        <xs:element name="Strasse" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Authentifizierungsmethode" type="FieldCType"/>
+                            <xs:element name="Emailadresse" type="FieldCType"/>
+                            <xs:element name="Name" type="FieldCType"/>
+                            <xs:element name="Postfachadresse">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Ort" type="FieldCType"/>
+                                        <xs:element name="Postfach" type="FieldCType"/>
+                                        <xs:element name="Postleitzahl" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Telefonnummer" type="FieldCType"/>
+                            <xs:element name="Zertifikat_Id" type="FieldCType"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Elstams">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Elstam">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Faktor" type="FieldCType"/>
+                                        <xs:element name="Freibetrag_Jahr" type="FieldCType"/>
+                                        <xs:element name="Freibetrag_Monat" type="FieldCType"/>
+                                        <xs:element name="Freibetrag_Tag" type="FieldCType"/>
+                                        <xs:element name="Freibetrag_Woche" type="FieldCType"/>
+                                        <xs:element name="Gueltig_ab" type="FieldCType"/>
+                                        <xs:element name="Hinzurechnungsbetrag_Jahr" type="FieldCType"/>
+                                        <xs:element name="Hinzurechnungsbetrag_Monat" type="FieldCType"/>
+                                        <xs:element name="Hinzurechnungsbetrag_Tag" type="FieldCType"/>
+                                        <xs:element name="Hinzurechnungsbetrag_Woche" type="FieldCType"/>
+                                        <xs:element name="Id" type="FieldCType"/>
+                                        <xs:element name="Identifikationsnummer" type="FieldCType"/>
+                                        <xs:element name="Kinderfreibetrag" type="FieldCType"/>
+                                        <xs:element name="Konfession" type="FieldCType"/>
+                                        <xs:element name="Konfession_Ehegatte" type="FieldCType"/>
+                                        <xs:element name="Laufende_Nummer" type="FieldCType"/>
+                                        <xs:element name="Listenart" type="FieldCType"/>
+                                        <xs:element name="Steuerklasse" type="FieldCType"/>
+                                        <xs:element name="Ungelesen" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Code" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Text" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Mitteilungen">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Mitteilung">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Art" type="FieldCType"/>
+                                        <xs:element name="Bezug" type="FieldCType"/>
+                                        <xs:element name="Datum_Mitteilung" type="FieldCType"/>
+                                        <xs:element name="Nutzdatenticket" type="FieldCType"/>
+                                        <xs:element name="Referenzierte_Elstams" type="FieldCType"/>
+                                        <xs:element name="Referenzierte_Vorgaenge" type="FieldCType"/>
+                                        <xs:element name="Text" type="FieldCType"/>
+                                        <xs:element name="Transferticket" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Code" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Steuernummer" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Typ" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Stammdaten">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Stammdateneintrag">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Geburtsdatum" type="FieldCType"/>
+                                        <xs:element name="Identifikationsnummer" type="FieldCType"/>
+                                        <xs:element name="Meldestatus_aktuell" type="FieldCType"/>
+                                        <xs:element name="Nachname" type="FieldCType"/>
+                                        <xs:element name="Personalnummer" type="FieldCType"/>
+                                        <xs:element name="Vorname" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Vorgaenge">
+                    <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="Vorgang">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Als_Hauptarbeitgeber" type="FieldCType"/>
+                                        <xs:element name="Freibetrag" type="FieldCType"/>
+                                        <xs:element name="Geburtsdatum" type="FieldCType"/>
+                                        <xs:element name="Gueltig_ab" type="FieldCType"/>
+                                        <xs:element name="Id" type="FieldCType"/>
+                                        <xs:element name="Identfikationsnummer" type="FieldCType"/>
+                                        <xs:element name="Nachname" type="FieldCType"/>
+                                        <xs:element name="Nutzdatenticket" type="FieldCType"/>
+                                        <xs:element name="Ref_Datum_AG" type="FieldCType"/>
+                                        <xs:element name="Transferticket" type="FieldCType"/>
+                                        <xs:element name="Typ" type="FieldCType"/>
+                                        <xs:element name="Ungelesen" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Code" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Datum" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Datum_alt" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Text" type="FieldCType"/>
+                                        <xs:element name="Verfahrenshinweis_Typ" type="FieldCType"/>
+                                        <xs:element name="Vorname" type="FieldCType"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:attribute name="version" fixed="1" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
